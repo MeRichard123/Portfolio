@@ -129,6 +129,9 @@ const Skills = () => {
           <Tooltip content="React- Javascript Framework">
             <Icon src={react} title="React JS" alt="React" />
           </Tooltip>
+          <Tooltip content="Typescript - Cooler Javascript">
+            <Icon src={ts} title="typescript" alt="Typescript" />
+          </Tooltip>
           <Tooltip content="SCSS - A CSS Preprocessor">
             <Icon src={scss} title="SCSS" alt="SCSS" />
           </Tooltip>
@@ -162,9 +165,6 @@ const Skills = () => {
           </Tooltip>
           <Tooltip content="Django- Fullstack Python Web Framework">
             <ModifiedIcon src={Django} title="django" alt="Django" />
-          </Tooltip>
-          <Tooltip content="Typescript - Cooler Javascript">
-            <Icon src={ts} title="typescript" alt="Typescript" />
           </Tooltip>
         </SkillContainer>
 
