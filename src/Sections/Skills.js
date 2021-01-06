@@ -18,6 +18,7 @@ import react from "../Assets/icons/Skills/react.svg";
 import scss from "../Assets/icons/Skills/scss.svg";
 import styledComp from "../Assets/icons/Skills/styled-components.svg";
 import vscode from "../Assets/icons/Skills/vscode.svg";
+import ts from "../Assets/icons/Skills/Typescript.svg";
 
 const cursorMove = keyframes`
 from {
@@ -162,9 +163,9 @@ const Skills = () => {
           <Tooltip content="Django- Fullstack Python Web Framework">
             <ModifiedIcon src={Django} title="django" alt="Django" />
           </Tooltip>
-          {/* <Tooltip content="Flask - Python micro web framework">
-            <ModifiedIcon src={Flask} title="Flask" alt="flask" />
-          </Tooltip> */}
+          <Tooltip content="Typescript - Cooler Javascript">
+            <Icon src={ts} title="typescript" alt="Typescript" />
+          </Tooltip>
         </SkillContainer>
 
         <Svg
