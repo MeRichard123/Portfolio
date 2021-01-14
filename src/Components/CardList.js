@@ -51,8 +51,12 @@ const projects = [
     overlayIcons: [<DiHtml5 />, <DiSass />],
     code: "https://github.com/MeRichard123/Rich-UI-Docs",
     site: "https://rich-ui.netlify.app/",
-    desc:
-      "I wanted my sites to have a certain feel, so my work is unique. This was a project suggested by WebDevSimplified, so I built a component library using interesing SCSS features and then built a documentation website to go with it. As a result I can speed up my development by having already made some of the components I need.",
+    desc: `I wanted my sites to have a certain feel, so that my work is unique. 
+      What did I do about this? Yes that's right; I built my own lightweight 
+      component library using interesting SCSS features and then built a documentation
+      website to go with it. As a result I can speed up my development by having
+      already made some of the components I need. Want to know more about this?
+      Scroll down and read the blog where I discuss this project in depth`,
   },
   {
     title: "Tedimin",
