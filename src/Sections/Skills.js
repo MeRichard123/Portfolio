@@ -3,15 +3,12 @@ import styled, { keyframes } from "styled-components";
 import Tooltip from "react-simple-tooltip";
 
 // Images
-import Bootstrap from "../Assets/icons/Skills/bootstrap.svg";
 import css from "../Assets/icons/Skills/css.svg";
 import Django from "../Assets/icons/Skills/django.svg";
 import Figma from "../Assets/icons/Skills/figma.svg";
-// import Flask from "../Assets/icons/Skills/flask.svg";
 import Git from "../Assets/icons/Skills/git.svg";
 import GitHub from "../Assets/icons/Skills/GitHub.svg";
 import html from "../Assets/icons/Skills/html.svg";
-import jquery from "../Assets/icons/Skills/jquery.svg";
 import js from "../Assets/icons/Skills/JS.svg";
 import python from "../Assets/icons/Skills/python.svg";
 import react from "../Assets/icons/Skills/react.svg";
@@ -19,6 +16,11 @@ import scss from "../Assets/icons/Skills/scss.svg";
 import styledComp from "../Assets/icons/Skills/styled-components.svg";
 import vscode from "../Assets/icons/Skills/vscode.svg";
 import ts from "../Assets/icons/Skills/Typescript.svg";
+import express from "../Assets/icons/Skills/express.svg";
+import graphql from "../Assets/icons/Skills/graphql.svg";
+import next from "../Assets/icons/Skills/next.svg";
+import tailwind from "../Assets/icons/Skills/tailwind.svg";
+import vue from "../Assets/icons/Skills/vue.svg";
 
 const cursorMove = keyframes`
 from {
@@ -38,13 +40,17 @@ const FlexWrapper = styled.div`
   display: grid;
   align-content: center;
   justify-items: center;
-  padding: 5rem;
+  padding: 25px;
   justify-content: space-evenly;
   grid-template-columns: 1fr 1fr;
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
     padding: 1px;
     grid-template-rows: 1fr;
+  }
+  @media screen and (min-width: 2200px) {
+    max-width: 70%;
+    margin: auto;
   }
 `;
 const SkillContainer = styled.div`
@@ -57,7 +63,7 @@ const SkillContainer = styled.div`
   padding: 50px;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   @media screen and (max-width: 900px) {
-    padding: 2px;
+    padding: 25px;
     gap: 10px;
   }
 `;
@@ -116,64 +122,13 @@ const Skills = () => {
         These are the technologies and utilities I work with.
       </SecondaryTitle>
       <FlexWrapper>
-        <SkillContainer>
-          <Tooltip content="HTML - The Bones of a website">
-            <Icon src={html} title="HTML" alt="HTML" />
-          </Tooltip>
-          <Tooltip content="CSS - The styles">
-            <Icon src={css} title="CSS" alt="CSS" />
-          </Tooltip>
-          <Tooltip content="JS - The interactive parts">
-            <Icon src={js} title="Javascript" alt="JS" />
-          </Tooltip>
-          <Tooltip content="React- Javascript Framework">
-            <Icon src={react} title="React JS" alt="React" />
-          </Tooltip>
-          <Tooltip content="Typescript - Cooler Javascript">
-            <Icon src={ts} title="typescript" alt="Typescript" />
-          </Tooltip>
-          <Tooltip content="SCSS - A CSS Preprocessor">
-            <Icon src={scss} title="SCSS" alt="SCSS" />
-          </Tooltip>
-          <Tooltip content="Styled-components - CSS-in-JS">
-            <Icon
-              src={styledComp}
-              title="Styled-Components"
-              alt="Styled components"
-            />
-          </Tooltip>
-          <Tooltip content="JQuery- A Fun JS Library">
-            <Icon src={jquery} title="Jquery" alt="Jquery" />
-          </Tooltip>
-          <Tooltip content="Bootstrap - A CSS Framework">
-            <Icon src={Bootstrap} title="Bootstrap" alt="Bootstrap" />
-          </Tooltip>
-          <Tooltip content="Git - For Version Control">
-            <Icon src={Git} title="Git" alt="Git" />
-          </Tooltip>
-          <Tooltip content="Github">
-            <ModifiedIcon src={GitHub} title="Github" alt="Github" />
-          </Tooltip>
-          <Tooltip content="Figma - Design Software">
-            <Icon src={Figma} title="Figma" alt="Figma" />
-          </Tooltip>
-          <Tooltip content="VScode- Code Editor">
-            <Icon src={vscode} title="VScode" alt="VScode" />
-          </Tooltip>
-          <Tooltip content="Python">
-            <Icon src={python} title="python" alt="Python" />
-          </Tooltip>
-          <Tooltip content="Django- Fullstack Python Web Framework">
-            <ModifiedIcon src={Django} title="django" alt="Django" />
-          </Tooltip>
-        </SkillContainer>
-
+        <Frontend />
         <Svg
           viewBox="0 0 482 416"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0)">
+          <g clipPath="url(#clip0)">
             <path
               d="M420.591 392.46C415.957 389.99 404.499 390.531 399.349 391.302C398.191 387.829 413.804 385.151 425.226 383.97C436.426 382.813 464.043 387.686 468.869 391.302C473.503 394.775 478.167 396.971 480.841 400.178C482.773 402.493 480.455 407.381 478.524 409.826C475.177 410.34 467.169 411.524 461.917 412.141C456.664 412.758 448.656 408.797 445.309 406.738C439.001 403.008 425.226 394.93 420.591 392.46Z"
               fill="url(#paint0_radial)"
@@ -196,13 +151,13 @@ const Skills = () => {
               d="M349.913 389.759H122.431C118.569 393.232 105.321 406.657 102.734 408.668C99.258 411.369 105.051 410.983 105.051 410.983C186.543 410.854 353.698 411.832 359.569 412.141C365.439 412.45 369.482 410.726 370.769 409.826L349.913 389.759Z"
               fill="url(#paint2_linear)"
               stroke="black"
-              stroke-width="0.5"
+              strokeWidth="0.5"
             />
             <path
               d="M101.575 415.228C100.803 414.456 101.575 410.829 101.575 410.212C101.575 410.829 103.12 410.983 103.893 410.983L355.707 412.141L355.687 412.138C351.861 412.11 353.868 411.882 355.535 412.116L355.687 412.138C355.928 412.14 356.191 412.141 356.479 412.141C357.638 412.141 369.611 411.755 370.769 409.826C371.155 410.212 371.542 412.603 371.542 413.299C371.542 414.456 368.709 415.488 366.907 415.426C263.289 415.426 102.348 416 101.575 415.228Z"
               fill="url(#paint3_linear)"
               stroke="black"
-              stroke-width="0.5"
+              strokeWidth="0.5"
             />
             <path
               d="M470.328 282.093L1.45909 280.935C1.45909 283.765 -0.0858214 295.213 1.45909 310.649C2.8308 324.355 6.47988 323.77 14.2043 323.77C149.51 322.612 425.421 323.377 442.906 324.542C460.286 325.699 468.397 321.455 470.328 317.21V282.093Z"
@@ -438,13 +393,9 @@ const Skills = () => {
               gradientUnits="userSpaceOnUse"
               gradientTransform="translate(406.688 388.215) rotate(11.9837) scale(76.2007 220.348)"
             >
-              <stop offset="0.488133" stop-color="#FAF8F9" />
-              <stop
-                offset="0.735416"
-                stop-color="#DDE8E9"
-                stop-opacity="0.62"
-              />
-              <stop offset="1" stop-color="#BCCFD3" />
+              <stop offset="0.488133" stopColor="#FAF8F9" />
+              <stop offset="0.735416" stopColor="#DDE8E9" stopOpacity="0.62" />
+              <stop offset="1" stopColor="#BCCFD3" />
             </radialGradient>
             <linearGradient
               id="paint1_linear"
@@ -454,8 +405,8 @@ const Skills = () => {
               y2="409.851"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#DBE5E6" />
-              <stop offset="1" stop-color="#5B727A" />
+              <stop stopColor="#DBE5E6" />
+              <stop offset="1" stopColor="#5B727A" />
             </linearGradient>
             <linearGradient
               id="paint2_linear"
@@ -465,9 +416,9 @@ const Skills = () => {
               y2="401.343"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#C4C4C4" stop-opacity="0.89" />
-              <stop offset="0.5375" stop-color="white" stop-opacity="0.85" />
-              <stop offset="1" stop-color="#C4C4C4" stop-opacity="0.85" />
+              <stop stopColor="#C4C4C4" stopOpacity="0.89" />
+              <stop offset="0.5375" stopColor="white" stopOpacity="0.85" />
+              <stop offset="1" stopColor="#C4C4C4" stopOpacity="0.85" />
             </linearGradient>
             <linearGradient
               id="paint3_linear"
@@ -477,43 +428,19 @@ const Skills = () => {
               y2="412.913"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-opacity="0.76" />
-              <stop
-                offset="0.115625"
-                stop-color="#D6D6D6"
-                stop-opacity="0.61"
-              />
-              <stop
-                offset="0.266666"
-                stop-color="#DFE6E8"
-                stop-opacity="0.44"
-              />
+              <stop stopOpacity="0.76" />
+              <stop offset="0.115625" stopColor="#D6D6D6" stopOpacity="0.61" />
+              <stop offset="0.266666" stopColor="#DFE6E8" stopOpacity="0.44" />
               <stop
                 offset="0.488403"
-                stop-color="#EEEEEE"
-                stop-opacity="0.221612"
+                stopColor="#EEEEEE"
+                stopOpacity="0.221612"
               />
-              <stop
-                offset="0.488503"
-                stop-color="#DFE6E8"
-                stop-opacity="0.54"
-              />
-              <stop
-                offset="0.594791"
-                stop-color="#DFE6E8"
-                stop-opacity="0.76"
-              />
-              <stop
-                offset="0.740625"
-                stop-color="#DFE6E8"
-                stop-opacity="0.61"
-              />
-              <stop
-                offset="0.860416"
-                stop-color="#DEDEDE"
-                stop-opacity="0.67"
-              />
-              <stop offset="0.985416" stop-opacity="0.77" />
+              <stop offset="0.488503" stopColor="#DFE6E8" stopOpacity="0.54" />
+              <stop offset="0.594791" stopColor="#DFE6E8" stopOpacity="0.76" />
+              <stop offset="0.740625" stopColor="#DFE6E8" stopOpacity="0.61" />
+              <stop offset="0.860416" stopColor="#DEDEDE" stopOpacity="0.67" />
+              <stop offset="0.985416" stopOpacity="0.77" />
             </linearGradient>
             <linearGradient
               id="paint4_linear"
@@ -523,8 +450,8 @@ const Skills = () => {
               y2="302.931"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#BDC2C3" />
-              <stop offset="1" stop-color="#DBE7E7" />
+              <stop stopColor="#BDC2C3" />
+              <stop offset="1" stopColor="#DBE7E7" />
             </linearGradient>
             <linearGradient
               id="paint5_linear"
@@ -534,8 +461,8 @@ const Skills = () => {
               y2="278.952"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#3B565D" />
-              <stop offset="1" stop-color="#010506" />
+              <stop stopColor="#3B565D" />
+              <stop offset="1" stopColor="#010506" />
             </linearGradient>
             <linearGradient
               id="paint6_linear"
@@ -545,10 +472,10 @@ const Skills = () => {
               y2="263.486"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0.0114581" stop-color="#1F4037" />
-              <stop offset="0.360416" stop-color="#99F2C8" />
-              <stop offset="0.547916" stop-color="#99F2C8" />
-              <stop offset="1" stop-color="#1F4037" />
+              <stop offset="0.0114581" stopColor="#1F4037" />
+              <stop offset="0.360416" stopColor="#99F2C8" />
+              <stop offset="0.547916" stopColor="#99F2C8" />
+              <stop offset="1" stopColor="#1F4037" />
             </linearGradient>
             <linearGradient
               id="paint7_linear"
@@ -558,12 +485,12 @@ const Skills = () => {
               y2="379.725"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#90ABB4" />
-              <stop offset="0.297916" stop-color="#DBE6E8" />
-              <stop offset="0.38125" stop-color="#E2EBED" />
-              <stop offset="0.459375" stop-color="#9BB4B9" />
-              <stop offset="0.678125" stop-color="#6D8893" />
-              <stop offset="1" stop-color="#93AEB7" />
+              <stop stopColor="#90ABB4" />
+              <stop offset="0.297916" stopColor="#DBE6E8" />
+              <stop offset="0.38125" stopColor="#E2EBED" />
+              <stop offset="0.459375" stopColor="#9BB4B9" />
+              <stop offset="0.678125" stopColor="#6D8893" />
+              <stop offset="1" stopColor="#93AEB7" />
             </linearGradient>
             <linearGradient
               id="paint8_linear"
@@ -573,8 +500,8 @@ const Skills = () => {
               y2="187.547"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#067B94" />
-              <stop offset="1" stop-color="#0DD4FF" stop-opacity="0.64" />
+              <stop stopColor="#067B94" />
+              <stop offset="1" stopColor="#0DD4FF" stopOpacity="0.64" />
             </linearGradient>
             <clipPath id="clip0">
               <rect width="482" height="416" fill="white" />
@@ -587,3 +514,69 @@ const Skills = () => {
 };
 
 export default Skills;
+
+const Frontend = () => (
+  <>
+    <SkillContainer>
+      <Tooltip content="HTML - The Bones of a website">
+        <Icon src={html} title="HTML" alt="HTML" />
+      </Tooltip>
+      <Tooltip content="CSS - The styles">
+        <Icon src={css} title="CSS" alt="CSS" />
+      </Tooltip>
+      <Tooltip content="JS - The interactive parts">
+        <Icon src={js} title="Javascript" alt="JS" />
+      </Tooltip>
+      <Tooltip content="React- Javascript Framework">
+        <Icon src={react} title="React JS" alt="React" />
+      </Tooltip>
+      <Tooltip content="Typescript - Cooler Javascript">
+        <Icon src={ts} title="typescript" alt="Typescript" />
+      </Tooltip>
+      <Tooltip content="SCSS - A CSS Preprocessor">
+        <Icon src={scss} title="SCSS" alt="SCSS" />
+      </Tooltip>
+      <Tooltip content="Styled-components - CSS-in-JS">
+        <Icon
+          src={styledComp}
+          title="Styled-Components"
+          alt="Styled components"
+        />
+      </Tooltip>
+      <Tooltip content="Tailwind - CSS Utility Library">
+        <Icon src={tailwind} title="tailwind" alt="Tailwind CSS" />
+      </Tooltip>
+      <Tooltip content="NextJS - React Framework for production">
+        <ModifiedIcon src={next} title="NextJS" alt="Next JS" />
+      </Tooltip>
+      <Tooltip content="VueJS - A Fun Javascript Framework">
+        <Icon src={vue} title="Vue JS" alt="Vue JS" />
+      </Tooltip>
+      {/* Extra */}
+      <Tooltip content="Python">
+        <Icon src={python} title="python" alt="Python" />
+      </Tooltip>
+      <Tooltip content="Django- Fullstack Python Web Framework">
+        <ModifiedIcon src={Django} title="django" alt="Django" />
+      </Tooltip>
+      <Tooltip content="Express JS - A Lighter API Framework">
+        <ModifiedIcon src={express} title="Express JS" alt="Express JS" />
+      </Tooltip>
+      <Tooltip content="GraphQL - An API Query Language">
+        <Icon src={graphql} title="GraphQL" alt="Graph QL" />
+      </Tooltip>
+      <Tooltip content="Git - For Version Control">
+        <Icon src={Git} title="Git" alt="Git" />
+      </Tooltip>
+      <Tooltip content="Github">
+        <ModifiedIcon src={GitHub} title="Github" alt="Github" />
+      </Tooltip>
+      <Tooltip content="Figma - Design Software">
+        <Icon src={Figma} title="Figma" alt="Figma" />
+      </Tooltip>
+      <Tooltip content="VScode- Code Editor">
+        <Icon src={vscode} title="VScode" alt="VScode" />
+      </Tooltip>
+    </SkillContainer>
+  </>
+);

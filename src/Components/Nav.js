@@ -24,12 +24,12 @@ function Nav() {
       animate={{ y: 0 }}
       transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
     >
-      <div class="flex-wrapper">
+      <div className="flex-wrapper">
         <a className="nav__logo" href="#intro">
           Richard Coric
         </a>
         <div
-          class={isActive ? "hamburger open" : "hamburger"}
+          className={isActive ? "hamburger open" : "hamburger"}
           onClick={handleClick}
         >
           <div className="burger"></div>

@@ -22,6 +22,7 @@ const Form = styled.form`
   margin: auto;
   padding: 1.5rem 10rem;
   width: 80%;
+
   @media screen and (max-width: 900px) {
     padding: 3rem 0;
     width: 95%;
@@ -62,13 +63,14 @@ const Contact = () => {
   return (
     <FormSection id="contact">
       <Title>Get In Touch?</Title>
+
       <Form method="post" name="contact">
         <input type="hidden" name="form-name" value="contact" />
-        <Label for="name">Name:</Label>
+        <Label htmlFor="name">Name:</Label>
         <Input type="text" name="name" id="name" required />
-        <Label for="email">Email:</Label>
+        <Label htmlFor="email">Email:</Label>
         <Input type="email" name="email" id="email" required />
-        <Label for="message">Message:</Label>
+        <Label htmlFor="message">Message:</Label>
         <TextArea name="message" id="message" cols="30" rows="10"></TextArea>
         <Button type="submit" value="Send" />
       </Form>

@@ -15,7 +15,7 @@ const Title = styled.h1`
   margin: 10px 0 20px 0;
 `;
 
-const Button = styled.a`
+const Button = styled.span`
   padding: 1rem 1.5rem;
   color: white;
   text-decoration: none;
@@ -61,6 +61,12 @@ const Tab = styled.h2`
     margin: 10px 10px 10px 20px;
   }
 `;
+const RestrainedContainer = styled.div`
+  @media screen and (min-width: 2200px) {
+    max-width: 70%;
+    margin: auto;
+  }
+`;
 
 const Projects = () => {
   const [frontend, setFrontend] = useState(true);
@@ -76,8 +82,9 @@ const Projects = () => {
         <Tab onClick={toggle}>Frontend</Tab>
         <Tab onClick={toggle}>Fullstack</Tab>
       </Tabs>
-
-      {frontend ? <CardsList /> : <FullStackCardList />}
+      <RestrainedContainer>
+        {frontend ? <CardsList /> : <FullStackCardList />}
+      </RestrainedContainer>
 
       <Link to="/projects" style={{ textDecoration: "none" }}>
         <Button>View More</Button>

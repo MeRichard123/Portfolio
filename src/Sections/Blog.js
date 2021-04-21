@@ -95,7 +95,7 @@ const BlogDate = styled.h4`
 `;
 const BlogDesc = styled.p``;
 
-const Button = styled.a`
+const Button = styled.span`
   padding: 0.8rem 2.5rem;
   color: white;
   text-decoration: none;

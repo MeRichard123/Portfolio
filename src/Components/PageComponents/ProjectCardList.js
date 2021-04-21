@@ -85,8 +85,9 @@ const cardData = [
 const ProjectCardList = () => {
   return (
     <Container>
-      {cardData.map((data) => (
+      {cardData.map((data, index) => (
         <ProjectCard
+          key={index}
           title={data.title}
           desc={data.desc}
           site={data.site}

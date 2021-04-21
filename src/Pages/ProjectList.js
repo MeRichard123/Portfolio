@@ -4,7 +4,7 @@ import PageNav from "../Components/PageNav";
 import ProjectCardList from "../Components/PageComponents/ProjectCardList";
 import Footer from "../Components/Footer";
 
-const Test = styled.h1`
+const Title = styled.h1`
   margin-top: 4rem;
 `;
 
@@ -12,7 +12,7 @@ const ProjectList = () => {
   return (
     <div>
       <PageNav />
-      <Test>My Projects</Test>
+      <Title>My Projects</Title>
       <ProjectCardList />
       <Footer />
     </div>

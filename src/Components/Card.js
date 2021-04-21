@@ -31,7 +31,7 @@ function Card(props) {
         className="overlay overlayBottom"
         onClick={() => setModalIsOpen(true)}
       >
-        <div class="text">View More</div>
+        <div className="text">View More</div>
         <div className="ico">
           <IconContext.Provider value={{ color: "white", size: "3rem" }}>
             {overlayIcons}
