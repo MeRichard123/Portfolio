@@ -27,12 +27,19 @@ const Button = styled.a`
     background: #31493c;
   }
 `;
+
+const Image = styled.img`
+  height: 5rem;
+  margin: auto 10px;
+`;
+
 const ProjectCard = ({ title, desc, site, code, hasSite }) => {
   return (
     <Card>
-      <img src={github} alt="" />
+      <Image src={github} alt="" />
       <div>
         <h2>{title}</h2>
+  
         <p>{desc}</p>
         <FlexContainer>
           {hasSite ? (
