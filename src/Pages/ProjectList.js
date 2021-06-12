@@ -24,9 +24,12 @@ const StyledHighLightTitle = styled.h2`
     left: -100%;
     transform: translateX(-50%);
     top: 50%;
+    @media screen and (max-width:900px){
+      left: -50%;
+    }
   }
   &::before{
-     content: "";
+    content: "";
     position: absolute;
     width: 13vw;
     height: 4px;
@@ -34,6 +37,9 @@ const StyledHighLightTitle = styled.h2`
     right: -100%;
     transform: translateX(50%);
     top: 50%;
+    @media screen and (max-width:900px){
+      right: -50%;
+    }
   }
 `;
 

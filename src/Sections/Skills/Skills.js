@@ -86,10 +86,10 @@ const Skills = () => {
       </SecondaryTitle>
       <FlexWrapper>
         <SkillContainer>
-          {SkillList.map((skill) => {
+          {SkillList.map((skill, index) => {
             if (ModIcons.includes(skill.title)) {
               return (
-                <Tooltip content={skill.content}>
+                <Tooltip content={skill.content} key={index}>
                   <ModifiedIcon
                     src={skill.img}
                     title={skill.title}
@@ -99,7 +99,7 @@ const Skills = () => {
               );
             } else {
               return (
-                <Tooltip content={skill.content}>
+                <Tooltip content={skill.content}  key={index}>
                   <Icon src={skill.img} title={skill.title} alt={skill.title} />
                 </Tooltip>
               );

@@ -33,8 +33,8 @@ function Card(props) {
       >
         <div className="text">View More</div>
         <div className="ico">
-          <IconContext.Provider value={{ color: "white", size: "3rem" }}>
-            {overlayIcons}
+          <IconContext.Provider value={{ color: "white", size: "48px" }}>
+            {overlayIcons.map((icon, index) => (<span key={ index}>{ icon}</span>))}
           </IconContext.Provider>
         </div>
       </div>
