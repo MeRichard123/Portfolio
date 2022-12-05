@@ -1,0 +1,238 @@
+/* Main Navigation Styles */
+
+  /* --nav-bg: #7a9e7e; */
+$nav-bg: #fff;
+$logo-clr: #000;
+$text-clr: black;
+$anim-speed: 0.3s;
+$marginMobile: 20px;
+$marginDesktop: 80px;
+
+.nav {
+  background: $nav-bg;
+  transition: all 250ms ease-in-out;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 990;
+}
+.navLogo {
+  text-decoration: none;
+  color: $logo-clr;
+}
+
+.navLogo:hover {
+  color: $logo-clr;
+}
+
+.navLogo:focus {
+  border: 1px solid #7a9e7e;
+}
+
+.navLink a {
+  color: $text-clr;
+  text-decoration: none;
+}
+
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 $marginMobile;
+}
+
+.navList {
+  list-style: none;
+  height: 0;
+  transition: 250ms height ease-in-out;
+  overflow: hidden;
+  margin: 0 $marginMobile;
+  text-align: center;
+}
+
+.active {
+  height: 300px;
+  transition: height 0.4s linear;
+  transition-delay: 0.6s;
+}
+
+.navLink {
+  margin-top: 50px;
+  cursor: pointer;
+  color: $text-clr;
+  position: relative;
+}
+
+.nav a:hover,
+.nav a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/* nav link hover */
+.navLink a::before,
+.navLink a::after {
+  display: inline-block;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.navLink a::before {
+  margin-right: 10px;
+  content: "<";
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.navLink a::after {
+  margin-left: 10px;
+  content: "/>";
+  -webkit-transform: translateX(-20px);
+  -moz-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+.navLink a:hover::before,
+.navLink a:hover::after,
+.navLink a:focus::before,
+.navLink a:focus::after {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/* Burger Menu Styles */
+.hamburger {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  padding: 0.5rem;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.burger {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  display: flex;
+  background: $text-clr;
+  transition: opacity 0.5s ease;
+}
+
+.burger::after,
+.burger::before {
+  position: absolute;
+  content: "";
+  width: 30px;
+  border-radius: 1px;
+  height: 3px;
+  background: $text-clr;
+  transition: transform 0.5s cubic-bezier(1, -0.47, 1, 1.45);
+  opacity: 1;
+}
+
+.burger::after {
+  transform: translateY(-8px);
+}
+
+.burger::before {
+  transform: translateY(8px);
+}
+
+/* Open Burger styles */
+.open .burger {
+  animation: hide 0.2s $anim-speed cubic-bezier(1, -0.47, 1, 1.45)
+    forwards;
+}
+
+.open .burger::after {
+  animation: pop $anim-speed cubic-bezier(1, -0.47, 1, 1.45) forwards,
+    flip $anim-speed $anim-speed cubic-bezier(1, -0.47, 1, 1.45)
+      forwards;
+}
+
+.open .burger::before {
+  animation: popTwo $anim-speed cubic-bezier(1, -0.47, 1, 1.45) forwards,
+    flipTwo $anim-speed $anim-speed cubic-bezier(1, -0.47, 1, 1.45)
+      forwards;
+}
+/* Burger Keyframes */
+@keyframes pop {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes flip {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes popTwo {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes flipTwo {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes hide {
+  to {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  /* Switch colours for desktop */
+
+  .flexWrapper{
+    margin: 0 $marginDesktop;
+  }
+  /* Style if scrolled for visibility */
+  .scrolled {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  /* Style nav for desktop view */
+  .hamburger {
+    display: none;
+  }
+  .navList {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  .navLink {
+    margin: 0 5px;
+  }
+  .navLogo {
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+}

@@ -1,0 +1,60 @@
+.projectContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.card {
+  position: relative;
+  max-width: 400px;
+  display: inline-block;
+  // DIV  
+}
+
+.image {
+  display: block;
+  max-width: 400px;
+  // IMG
+}
+
+.overlay {
+  position: absolute;
+  transition: all 0.3s ease;
+  opacity: 0;
+  background-color: #eee;
+  cursor: pointer;
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+.card:focus .overlay {
+  opacity: 1;
+}
+
+// next two are divs
+.ico {
+  margin: 20px;
+}
+.text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.overlayBottom {
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(128, 128, 128, 0.95);
+}
+.card:hover .overlayBottom {
+  height: 100%;
+}
+.card:focus .overlayBottom {
+  height: 100%;
+}
