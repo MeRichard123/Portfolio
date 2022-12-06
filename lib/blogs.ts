@@ -27,6 +27,11 @@ export const getArticle = async (slug: string) => {
            'Content-Type': 'application/json'
        } 
     })
-    const article = await res.json();
-    return article;
+    const article = await res.text();
+    try {
+        const articleData = JSON.parse(article);
+        return articleData;
+    } catch {
+        return article;
+    }
 }
