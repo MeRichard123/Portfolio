@@ -53,7 +53,7 @@ const projects:ProjectType[] = [
   {
     image: "/assets/projects/Jakub Art.png",
     overlayIcons: [<DiHtml5 key={1} />, <DiSass key={2} />, <DiJqueryLogo key={3} />],
-    projectPageLink: "/projects/art",
+    projectPageLink: "/projects/jakub-art",
   },
   {
     image: "/assets/projects/TURTLES.png",

@@ -44,7 +44,7 @@ export const StyledSkillsContainer = styled.div`
     margin: auto;
     gap: 20px;
     padding: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     @media screen and (max-width: 900px) {
         padding: 15px;
         gap: 10px;

@@ -44,6 +44,7 @@ export const StyledTab = styled.h3`
 
 export const RestrainedContainer = styled.div`
   margin-bottom: 1.5em;
+  margin: 10px;
   @media screen and (min-width: 2200px) {
     max-width: 70%;
     margin: auto;

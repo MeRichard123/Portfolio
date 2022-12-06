@@ -6,8 +6,12 @@ const Main = styled.main`
     
     img{
         width: 100%;
+        box-sizing: border-box;
         height: auto;
-        max-width: 40vw
+        padding: 0 20px;
+        @media screen and (min-width: 900px){
+            max-width: 50vw;
+        }
     }
     
     p{

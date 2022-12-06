@@ -17,12 +17,13 @@ const TechStack = styled.p`
 const StyledButtonGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin: 20px 0;
+  justify-content: center;
 `;
 
 const project = ({ pageData }: PageDataType) => {
   return (
-    <div style={{marginTop: "50px"}}>
+    <div style={{marginTop: "50px", minHeight:"100vh"}}>
       <div>
         <ProjectLayout>
           <h2>{pageData.title}</h2>
