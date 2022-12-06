@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ProjectLayout from '../../layouts/ProjectLayout';
 import styled from "@emotion/styled";
 import Button from '../../components/Button';
-import {PageDataType} from './projectTypes'
+import {PageDataType} from '../../lib/projectTypes'
 
 const TechStack = styled.p`
     text-align: center;
