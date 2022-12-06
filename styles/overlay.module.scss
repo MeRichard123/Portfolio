@@ -24,8 +24,10 @@
   opacity: 0;
   background-color: #eee;
   cursor: pointer;
+  pointer-events: none;
 }
 .card:hover .overlay {
+  pointer-events: all;
   opacity: 1;
 }
 .card:focus .overlay {
