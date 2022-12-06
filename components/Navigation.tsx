@@ -64,7 +64,13 @@ function Nav() {
               </li>
             </>) : (
                <li className="navLink">
-                <Link href={router.pathname.split("/").length < 3 ? "/" : "/blogs"} onClick={handleClick}>
+                <Link href={
+                  router.pathname.split("/")[1] === "projects"
+                    || router.pathname.split("/").length < 3
+                    ? "/"
+                    : "/blogs"}
+                  onClick={handleClick}
+                >
                   Back
                 </Link>
               </li>

@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
 export const StyledMain = styled.main`
-    height: 95vh;
+    height: 100%;
     background-color: white;
     padding: 10vh 0;
     text-align: center;
     @media screen and (max-width:900px){
-        padding: 10vh 10px;
+        padding: 10vh 10px 0 10px;
     }
 `;
 

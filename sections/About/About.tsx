@@ -26,7 +26,7 @@ const About = () => {
         <StyledBtnGroup>
           <Button link="https://github.com/MeRichard123/" isExternal>Github</Button>
           <Button link="https://www.linkedin.com/in/richardcoric/" isExternal>LinkedIn</Button>
-          <Button link="">Resume</Button>
+          <Button link="/richardcoric.pdf" isExternal>Resume</Button>
         </StyledBtnGroup>      
       </StyledMain>
   )
