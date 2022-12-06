@@ -99,7 +99,7 @@ export const StyledBlogs = styled.div`
         height: 60%;
         position: absolute;
         background-color: black;
-        @media screen and (max-width:900px){
+        @media screen and (max-width:1280px){
             transform: rotate(90deg);
         }
     }
