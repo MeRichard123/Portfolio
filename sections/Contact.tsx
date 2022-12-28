@@ -35,13 +35,15 @@ const Form = styled.form`
   }
 `;
 const Input = styled.input`
+  font-family: 'Lora', serif;
   padding: 0.75rem;
   border: 0;
   text-align: left;
   width: 100%;
   margin: 10px 0 20px 0;
-`;
+  `;
 const TextArea = styled.textarea`
+  font-family: 'Lora', serif;
   padding: 0.75rem;
   border: 0;
   width: 100%;

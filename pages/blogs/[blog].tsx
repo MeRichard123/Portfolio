@@ -2,7 +2,10 @@ import {getArticle, getArticleSlugs} from '../../lib/blogs';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import MarkdownView from 'react-showdown';
-import 'github-markdown-css';
+
+// if you ever do dark mode remove the path to css and leave the first part
+// it comes with prefers colour scheme.
+import 'github-markdown-css/github-markdown-light.css';
 
 const StyledMain = styled.main`
     text-align: center;
