@@ -116,7 +116,7 @@ export const getStaticProps = async ({params}:any) => {
         props: {
             article: ArticleData
         },
-        revalidate: 120
+        revalidate: 10,
     }
 }
 
