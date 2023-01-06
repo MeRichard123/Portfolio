@@ -80,7 +80,7 @@ const blog = ({article}: PropTypes) => {
   return (
       <StyledMain>
           <StyledTitle>{article.title}</StyledTitle>
-          <Link href={article.url} target="_blank" rel="noopener noreferrer">   
+          <Link href={article.url ?? ''} target="_blank" rel="noopener noreferrer">   
               <StyledLink>
                   Read the Original on Dev.to
             </StyledLink>
