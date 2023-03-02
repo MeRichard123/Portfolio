@@ -6,11 +6,9 @@ import { keyframes } from '@emotion/react';
 import {
   DiCss3,
   DiHtml5,
-  DiJsBadge,
   DiJqueryLogo,
   DiReact,
   DiSass,
-  DiBootstrap,
 } from "react-icons/di";
 
 const fadeIn = keyframes`
@@ -34,11 +32,11 @@ interface ProjectType{
   projectPageLink: string;
 }
 
-const projects:ProjectType[] = [
+const projects: ProjectType[] = [
   {
-    image: "/assets/projects/Australia.png",
+    image: '/assets/projects/dss.png',
     overlayIcons: [<DiReact key={1} />],
-    projectPageLink: "/projects/australia"
+    projectPageLink: '/projects/digital-sky-studios',
   },
   {
     image: "/assets/projects/Rich UI.png",
@@ -46,9 +44,9 @@ const projects:ProjectType[] = [
     projectPageLink: "/projects/rich-ui",
   },
   {
-    image: "/assets/projects/Tedimin.png",
-    overlayIcons: [<DiHtml5 key={1} />, <DiSass key={2} />],
-    projectPageLink: "/projects/tedimin",
+    image: "/assets/projects/Australia.png",
+    overlayIcons: [<DiReact key={1} />],
+    projectPageLink: "/projects/australia"
   },
   {
     image: "/assets/projects/Jakub Art.png",
@@ -61,9 +59,9 @@ const projects:ProjectType[] = [
     projectPageLink: "/projects/turtles-and-tortoises"
   },
   {
-    image: "/assets/projects/EQUIFOX.png",
-    overlayIcons: [<DiHtml5 key={1} />, <DiCss3 key={2} />, <DiBootstrap key={3} />, <DiJsBadge key={4} />],
-    projectPageLink: "/projects/equifox"
+    image: "/assets/projects/Tedimin.png",
+    overlayIcons: [<DiHtml5 key={1} />, <DiSass key={2} />],
+    projectPageLink: "/projects/tedimin",
   },
   ];
 

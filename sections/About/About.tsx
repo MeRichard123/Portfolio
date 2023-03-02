@@ -3,7 +3,16 @@ import {StyledMain, StyledAboutHeading, StyledBtnGroup, StyledPara} from './Abou
 
 const calculateAge = (): number => {
   const date = new Date();
-  return date.getFullYear() - 2003;
+  const dob = new Date('08/11/2003');
+  
+  let yearDiff = date.getFullYear() - dob.getFullYear();
+
+  if (date.getMonth() < dob.getMonth() || date.getMonth() == dob.getMonth() && date.getDate() < dob.getDate()) {
+      yearDiff--;
+  }
+
+  return yearDiff;
+
 }
 
 const About = () => {

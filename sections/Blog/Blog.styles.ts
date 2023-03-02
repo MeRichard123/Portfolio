@@ -18,7 +18,7 @@ export const StyledTitleSecondary = styled.h4`
     max-width: 50%;
     font-size: clamp(1rem, 1.3vw, 1.5rem);
     font-weight: 400;
-    margin: auto;
+    margin: 10px auto 2.5rem auto;
     @media screen and (max-width:900px){
       max-width: 100%;
       padding: 0 20px;

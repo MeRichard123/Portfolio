@@ -80,6 +80,9 @@ const blog = ({article}: PropTypes) => {
   return (
       <StyledMain>
           <StyledTitle>{article.title}</StyledTitle>
+      // TypeError: Cannot destructure property 'auth' of 'urlObj' as it is undefined 
+      // https://github.com/wpengine/faustjs/issues/361
+      // this was fixed by ?? ''
           <Link href={article.url ?? ''} target="_blank" rel="noopener noreferrer">   
               <StyledLink>
                   Read the Original on Dev.to
