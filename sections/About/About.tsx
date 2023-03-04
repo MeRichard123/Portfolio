@@ -20,7 +20,7 @@ const About = () => {
       <StyledMain id="about">
         <StyledAboutHeading>About Me</StyledAboutHeading>
         <StyledPara>
-          I am Richard, I am a {calculateAge()} year old Web developer and Computer Science Student from the UK.
+          I am Richard, I am a {calculateAge()} year old Software Developer and Computer Science Student from the UK.
           I am currently pursuing a bachelors degree at the University of Lincoln; graduating in 2025.
         </StyledPara>
         <StyledPara>

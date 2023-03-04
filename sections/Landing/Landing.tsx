@@ -8,7 +8,7 @@ const Landing = () => {
             <StyledHeading>Hi, I&apos;m Richard!</StyledHeading>
             <StyledHeadingSecondary>
               A
-              <StyledSpan>Fullstack Web Developer</StyledSpan>
+              <StyledSpan>Fullstack Software Developer</StyledSpan>
             </StyledHeadingSecondary>
             <StyledHeadingSecondary>and Creative Coder</StyledHeadingSecondary>
             <Pointer />
