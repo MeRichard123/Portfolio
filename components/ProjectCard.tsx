@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
-
 
 const Card = styled.div`
   padding: 20px 10px;
