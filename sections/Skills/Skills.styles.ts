@@ -25,7 +25,7 @@ export const StyledFlexContainer = styled.div`
     }   
 `;
 
-export const StyledDescription = styled.div`
+export const StyledDescription = styled.p`
     grid-column: 2/3;
     grid-row: 1/1;
     max-width: 30ch;

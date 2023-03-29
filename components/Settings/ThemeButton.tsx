@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
 interface ButtonProps{
@@ -21,8 +20,6 @@ const SemiCircle = styled.span<SemiCircleProps>`
     background: ${(props) => props.colour};
     border-radius: 100vw 100vw 0 0;
     transform: rotate(${(props) => (props.bottom ? '180deg' : '0deg')});
-    /* margin-top: ${(props) => (props.bottom ? '1px' : '0')}; */
-    /* margin-bottom: ${(props) => (props.bottom ? '0' : '1px')}; */
 `;
 
 interface ContainerProps{

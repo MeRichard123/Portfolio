@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import ProjectCardList from '../../components/ProjectCardList';
+import Button from '../../components/Button';
 
 const Container = styled.main`
     text-align:center;
@@ -151,6 +151,7 @@ const index = () => (
     <ProjectCardList cardData={HightLightData} />
     <StyledHighLightTitle>Other Bits</StyledHighLightTitle>
     <ProjectCardList cardData={cardData} />
+    <Button link="https://read.cv/merichard123" isExternal>Check out my Read.CV Profile</Button>
   </Container>
 );
 

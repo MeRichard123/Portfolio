@@ -35,17 +35,21 @@ function About() {
         <b>accessible</b>
         {' '}
         and
+        {' '}
         <b>responsive</b>
         {' '}
         sites, which serve their purpose. I am a very
         curious; always eager to learn. I have a passion for
+        {' '}
         <b>Design</b>
         {' '}
         and
+        {' '}
         <b>Innovation</b>
         {' '}
         because I believe
         all user experience should be aesthetic and functional.
+        I am also very interested in NLP and Programming Language/ Compiler Development.
       </StyledPara>
       <StyledPara>
         Unrelated to my studies I enjoy linguistics; languages and the processes in which

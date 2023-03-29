@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleADHDMode, setTheme, Theme } from '../../store/settingsSlice';
 import type { RootState } from '../../store/store';
