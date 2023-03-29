@@ -6,24 +6,27 @@ interface ItemType {
 
 export async function getAllPageIds(query:string) {
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
       Authorization: `Bearer ${process.env.KEY}`,
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ query }),
-  };
-
-  const res = await fetch(API, fetchOptions).then((response) => response.json());
+  }
+  
+  const res = await fetch(API, fetchOptions).then(response => response.json()); 
   const data = res.data.projectEntryCollection.items;
-  return data.map((item : ItemType) => ({
-    params: {
-      project: item.slug,
-    },
-  }));
+  return data.map((item : ItemType) => {
+    return {
+      params: {
+        project: item.slug,
+      }
+    }
+  })
 }
 
-const queryGen = (slug: string) => `
+const queryGen = (slug: string) => {
+  return `
   {
     projectEntryCollection(where: {slug: "${slug}"}){
       items{
@@ -41,25 +44,28 @@ const queryGen = (slug: string) => `
         demoLink
       }
     }
-  }`;
+  }`
+}
 
 export async function getPageData(id: string) {
-  const query = queryGen(id);
+  let query = queryGen(id);
 
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
       Authorization: `Bearer ${process.env.KEY}`,
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ query }),
-  };
+  }
 
-  const res = await fetch(API, fetchOptions).then((response) => response.json());
-  const data = res.data.projectEntryCollection.items;
 
+  const res = await fetch(API, fetchOptions).then(response => response.json()); 
+  const data = res.data.projectEntryCollection.items; 
+  
   return {
     id,
-    data,
-  };
+    data
+  }
 }
+

@@ -1,12 +1,10 @@
+import {StyledMain, StyledTab, StyledTabs, RestrainedContainer} from './Portfolio.styles'
 import { useState } from 'react';
-import {
-  StyledMain, StyledTab, StyledTabs, RestrainedContainer,
-} from './Portfolio.styles';
 import Button from '../../components/Button';
 import CardList from '../../components/CardList';
 import FullstackCardList from '../../components/FullstackCardList';
 
-function Portfolio() {
+const Portfolio = () => {
   const [frontend, setFrontend] = useState<boolean>(true);
 
   const toggle = () => {
@@ -18,7 +16,7 @@ function Portfolio() {
       <h2>
         Projects
       </h2>
-      <StyledTabs className={frontend ? '' : 'tab-selected'}>
+      <StyledTabs className={frontend ? "" : "tab-selected"}>
         <StyledTab onClick={toggle}>Frontend</StyledTab>
         <StyledTab onClick={toggle}>Fullstack</StyledTab>
       </StyledTabs>
@@ -29,6 +27,7 @@ function Portfolio() {
       <Button link="/projects">View More</Button>
     </StyledMain>
   );
-}
 
-export default Portfolio;
+};
+
+export default Portfolio

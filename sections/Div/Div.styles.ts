@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled"
 
 export const StyledMain = styled.section`
     height: 50vh;
@@ -32,6 +32,8 @@ export const StyledTitleSecondary = styled.h4`
       padding: 0 20px;
     }
 `;
+
+
 
 export const StyledDiv = styled.div`
     padding: 2.5rem 3.5rem;

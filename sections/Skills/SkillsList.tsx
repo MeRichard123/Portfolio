@@ -1,73 +1,74 @@
+
 export const SkillList = [
   {
-    content: 'Typescript - Cooler Javascript',
+    content: "Typescript - Cooler Javascript",
     img: '/assets/Typescript.svg',
-    title: 'Typescript',
+    title: "Typescript",
   },
   {
-    content: 'JS - The interactive parts',
+    content: "JS - The interactive parts",
     img: '/assets/JS.svg',
-    title: 'Javascript',
+    title: "Javascript",
   },
-  {
-    content: 'Python',
+ {
+    content: "Python",
     img: '/assets/python.svg',
-    title: 'Python',
+    title: "Python",
   },
   {
-    content: 'React - Javascript Framework',
+    content: "React - Javascript Framework",
     img: '/assets/react.svg',
-    title: 'React JS',
+    title: "React JS",
   },
   {
-    content: 'VueJS - A Fun Javascript Framework',
+    content: "VueJS - A Fun Javascript Framework",
     img: '/assets/vue.svg',
-    title: 'Vue JS',
+    title: "Vue JS",
   },
   {
-    content: 'HTML - The Bones of a website',
+    content: "HTML - The Bones of a website",
     img: '/assets/html.svg',
-    title: 'HTML',
+    title: "HTML",
   },
   {
-    content: 'CSS - The Styles',
+    content: "CSS - The Styles",
     img: '/assets/css.svg',
-    title: 'CSS',
+    title: "CSS",
   },
   {
-    content: 'SCSS - A CSS Preprocessor',
+    content: "SCSS - A CSS Preprocessor",
     img: '/assets/scss.svg',
-    title: 'SCSS',
+    title: "SCSS",
   },
   {
-    content: 'Styled-Components - CSS-in-JS',
+    content: "Styled-Components - CSS-in-JS",
     img: '/assets/styled-components.svg',
-    title: 'Styled-Components',
+    title: "Styled-Components",
   },
   {
-    content: 'Tailwind',
+    content: "Tailwind",
     img: '/assets/tailwind.svg',
-    title: 'Tailwind CSS',
+    title: "Tailwind CSS",
   },
   {
-    content: 'Next JS - React Framework for production',
+    content: "Next JS - React Framework for production",
     img: '/assets/next.svg',
-    title: 'NextJS',
+    title: "NextJS",
   },
 
   {
-    content: 'Django - Fullstack Python Web Framework',
+    content: "Django - Fullstack Python Web Framework",
     img: '/assets/django.svg',
-    title: 'Django',
+    title: "Django",
   },
   {
-    content: 'Express JS - A Lighter API Framework',
+    content: "Express JS - A Lighter API Framework",
     img: '/assets/express.svg',
-    title: 'Express JS',
+    title: "Express JS",
   },
   {
-    content: 'GraphQL - An API Query Language',
+    content: "GraphQL - An API Query Language",
     img: '/assets/graphql.svg',
-    title: 'GraphQL',
+    title: "GraphQL",
   },
 ];

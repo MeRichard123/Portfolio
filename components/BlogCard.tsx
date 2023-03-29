@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 
 const BlogLink = {
-  textDecoration: 'none',
-  color: '#001a23',
-  margin: '15px',
+  textDecoration: "none",
+  color: "#001a23",
+  margin: "15px",
 };
 const BlogItem = styled.div`
   display: flex;
@@ -80,9 +80,7 @@ interface CardProps{
     slug: string;
 }
 
-function BlogCard({
-  title, date, desc, tags, slug,
-}:CardProps) {
+const BlogCard = ({ title, date, desc, tags, slug }:CardProps) => {
   return (
     <Link href={`/blogs/${slug}`} style={BlogLink}>
       <BlogItem>
@@ -99,6 +97,6 @@ function BlogCard({
       </BlogItem>
     </Link>
   );
-}
+};
 
 export default BlogCard;

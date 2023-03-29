@@ -53,13 +53,13 @@ const Line = styled.div`
   }
 `;
 
-function Pointer() {
+const Pointer = () => {
   return (
     <StyledArrow>
       <Line />
       <Line />
     </StyledArrow>
   );
-}
+};
 
 export default Pointer;

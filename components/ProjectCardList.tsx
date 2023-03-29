@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import ProjectCard from './ProjectCard';
+import styled from '@emotion/styled';
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +16,9 @@ interface CardProps{
     hasSite: boolean;
 }
 
-function ProjectCardList({ cardData }:any) {
+
+
+const ProjectCardList = ({ cardData }:any) => {
   return (
     <Container>
       {cardData.map((data:CardProps, index:number) => (
@@ -32,6 +34,6 @@ function ProjectCardList({ cardData }:any) {
       ))}
     </Container>
   );
-}
+};
 
 export default ProjectCardList;

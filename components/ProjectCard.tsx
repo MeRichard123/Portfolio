@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
+
 
 const Card = styled.div`
   padding: 20px 10px;
@@ -38,15 +40,13 @@ interface CardProps{
     hasSite: boolean;
 }
 
-function ProjectCard({
-  title, desc, site, code, hasSite,
-}:CardProps) {
+const ProjectCard = ({ title, desc, site, code, hasSite }:CardProps) => {
   return (
     <Card>
       <Image src="/assets/github-icon.svg" alt="github logo" />
       <div>
         <h3>{title}</h3>
-
+  
         <p>{desc}</p>
         <FlexContainer>
           {hasSite ? (
@@ -54,7 +54,7 @@ function ProjectCard({
               Site
             </Button>
           ) : (
-            ''
+            ""
           )}
 
           <Button href={code} target="_blank">
@@ -64,6 +64,6 @@ function ProjectCard({
       </div>
     </Card>
   );
-}
+};
 
 export default ProjectCard;

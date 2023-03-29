@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import { About } from '../sections/About';
-import { Blog } from '../sections/Blog';
-import Contact from '../sections/Contact';
-import { Div } from '../sections/Div';
-import { Landing } from '../sections/Landing';
-import { Portfolio } from '../sections/Portfolio';
-import { Skills } from '../sections/Skills';
+import Head from 'next/head'
+import { About } from '../sections/About'
+import {Blog} from '../sections/Blog'
+import Contact from '../sections/Contact'
+import { Div } from '../sections/Div/'
+import {Landing} from '../sections/Landing'
+import { Portfolio } from '../sections/Portfolio'
+import { Skills } from '../sections/Skills'
 
 export default function Home() {
   return (
@@ -21,5 +21,5 @@ export default function Home() {
       <Div />
       <Contact />
     </div>
-  );
+  )
 }
