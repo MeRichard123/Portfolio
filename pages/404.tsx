@@ -1,6 +1,5 @@
-import Button from '../components/Button'
 import styled from '@emotion/styled';
-
+import Button from '../components/Button';
 
 const StyledMain = styled.main`
     height: 100vh;
@@ -15,12 +14,12 @@ const StyledContainer = styled.div`
 `;
 
 export default function Custom404() {
-    return (
-        <StyledMain>
-            <StyledContainer>
-                <StyledHeading>Oop- looks like you are lost!</StyledHeading>
-                <Button link="/">Go Home</Button>
-            </StyledContainer>
-        </StyledMain>
-    )
+  return (
+    <StyledMain>
+      <StyledContainer>
+        <StyledHeading>Oop- looks like you are lost!</StyledHeading>
+        <Button link="/">Go Home</Button>
+      </StyledContainer>
+    </StyledMain>
+  );
 }

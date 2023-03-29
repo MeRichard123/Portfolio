@@ -14,7 +14,6 @@ const FlexContainer = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-    
 export interface User {
     name: string;
     username: string;
@@ -57,42 +56,37 @@ interface PropType{
     posts?: PostType[]
 }
 
-const index = ({posts}:PropType) => {
-  return (
-      <Main>
-          <h2>My Blogs</h2>
-          <FlexContainer>
-        {posts?.map(post => (
-          <BlogCard
-            key={post.id}
-            title={post.title}
-            date={post.readable_publish_date}
-            desc={post.description}
-            tags={post.tag_list}
-            slug={post.slug}
-          />
-        )
-          )}    
-      </FlexContainer>
-    </Main>
-  )
+const index = ({ posts }:PropType) => (
+  <Main>
+    <h2>My Blogs</h2>
+    <FlexContainer>
+      {posts?.map((post) => (
+        <BlogCard
+          key={post.id}
+          title={post.title}
+          date={post.readable_publish_date}
+          desc={post.description}
+          tags={post.tag_list}
+          slug={post.slug}
+        />
+      ))}
+    </FlexContainer>
+  </Main>
+);
+
+export async function getStaticProps() {
+  const res = await fetch('https://dev.to/api/articles?username=merichard123', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data:PostType[] = await res.json();
+  return {
+    props: {
+      posts: data,
+    },
+  };
 }
-
-export async function getStaticProps(){
-    const res = await fetch("https://dev.to/api/articles?username=merichard123", {
-        method: "GET",
-        headers: {
-            'Content-Type' : 'application/json'   
-        }
-    });
-    const data:PostType[] = await res.json();
-    return {
-        props: {
-            posts: data
-        }
-    }
-}
-
-
 
 export default index;

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const Main = styled.main`
     display: grid;
@@ -26,11 +26,9 @@ const Main = styled.main`
 `;
 
 export default function ProjectLayout({ children }: any) {
-    return (
-        <>
-            <Main>
-                {children}
-            </Main>
-        </>
-    );
+  return (
+    <Main>
+      {children}
+    </Main>
+  );
 }
