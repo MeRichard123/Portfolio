@@ -7,7 +7,6 @@ export const StyledMain = styled.section`
     padding-bottom: 5em;
 `;
 
-
 export const StyledTabs = styled.div`
   display: inline-flex;
   margin-bottom: 20px;
@@ -50,4 +49,3 @@ export const RestrainedContainer = styled.div`
     margin: auto;
   }
 `;
-

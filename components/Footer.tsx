@@ -6,11 +6,13 @@ const StyledFooter = styled.footer`
     color: white;
 `;
 
-
-const Footer = () => {
+function Footer() {
   return (
-      <StyledFooter>Richard Coric &copy; {new Date().getFullYear()}</StyledFooter>
-  )
+    <StyledFooter>
+      Richard Coric &copy;
+      {new Date().getFullYear()}
+    </StyledFooter>
+  );
 }
 
-export default Footer
+export default Footer;

@@ -71,25 +71,23 @@ const Description = styled.p`
     font-size: 1.2rem;
 `;
 
-
-
-const Contact = () => {
+function Contact() {
   return (
     <FormSection id="contact">
       <Title>Get In Touch?</Title>
       <Description>Have an Idea? Let&apos;s make it happen</Description>
-      <Form method="post" name="contact" action='https://formspree.io/f/mzbwnelw'>
+      <Form method="post" name="contact" action="https://formspree.io/f/mzbwnelw">
         <input type="hidden" name="form-name" value="contact" />
         <Label htmlFor="name">Name:</Label>
         <Input type="text" name="name" id="name" required />
         <Label htmlFor="email">Email:</Label>
         <Input type="email" name="email" id="email" required />
         <Label htmlFor="message">Message:</Label>
-        <TextArea name="message" id="message" cols={30} rows={10}></TextArea>
+        <TextArea name="message" id="message" cols={30} rows={10} />
         <Button type="submit" value="Send" />
       </Form>
     </FormSection>
   );
-};
+}
 
 export default Contact;
