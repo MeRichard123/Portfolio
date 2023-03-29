@@ -28,5 +28,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
     'react/no-array-index-key': 'off',
+    'linebreak-style': ['error', 'windows'],
   },
 };

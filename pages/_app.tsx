@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import Nav from '../components/Navigation';
 import Footer from '../components/Footer';
 import { store } from '../store';
-import Settings from '../components/Settings/Settings';
+// import Settings from '../components/Settings/Settings';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       />
       <Provider store={store}>
         <Nav />
-        <Settings />
+        {/* <Settings /> */}
         <Component {...pageProps} />
         <Footer />
       </Provider>
