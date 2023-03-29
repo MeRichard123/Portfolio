@@ -15,8 +15,22 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: all 250ms ease;
 }
-/* 
+
+.dark {
+  color: white;
+  background: #000;
+}
+
+
+.light{
+  color: black;
+  background: white;
+}
+/*
+css-rivkbn
+css-1tdu655
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

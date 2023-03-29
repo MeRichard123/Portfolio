@@ -5,9 +5,10 @@ import styled from '@emotion/styled';
 const StyledButton = styled.button`
     transition: padding 250ms ease;
     padding: 10px 50px;
-    border: black 2px solid;
+    border: ${(props) => props.theme.colours.text} 2px solid;
+    color: ${(props) => props.theme.colours.text};
     font-family: 'Lora', serif;
-    background: white;
+    background: ${(props) => props.theme.colours.background};
     margin: 15px;
     font-size: clamp(0.7rem, 2vw, 1rem);
 

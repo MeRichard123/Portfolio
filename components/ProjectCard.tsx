@@ -4,7 +4,7 @@ const Card = styled.div`
   padding: 20px 10px;
   margin: 15px;
   width: 20rem;
-  background: #f6f6f6;
+  background: ${(props) => props.theme.colours.section};
   display: flex;
   justify-content: space-evenly;
 `;
@@ -17,7 +17,7 @@ const Button = styled.a`
   text-decoration: none;
   padding: 5px;
   width: 4em;
-  border: 2px solid black;
+  border: 2px solid ${(props) => props.theme.colours.text};
   transition: all 250ms ease;
   &:hover {
     color: white;
@@ -28,6 +28,7 @@ const Button = styled.a`
 const Image = styled.img`
   height: 5rem;
   margin: auto 10px;
+  filter: invert(${(props) => (props.theme.colours.text === '#fff' ? '100%' : '0%')});
 `;
 
 interface CardProps{

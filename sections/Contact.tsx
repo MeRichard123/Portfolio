@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const FormSection = styled.section`
-  background: #E0E0E0;
+  background: ${(props) => props.theme.colours.formBackground};
   padding: 1rem 1.5rem 0 1.5rem;
   min-height: 80vh;
   justify-content: center;
@@ -41,6 +41,7 @@ const Input = styled.input`
   text-align: left;
   width: 100%;
   margin: 10px 0 20px 0;
+  background: ${(props) => props.theme.colours.background}
   `;
 const TextArea = styled.textarea`
   font-family: 'Lora', serif;
@@ -49,12 +50,14 @@ const TextArea = styled.textarea`
   width: 100%;
   text-align: left;
   margin: 10px;
+  background: ${(props) => props.theme.colours.background}
 `;
 const Button = styled.input`
     padding: 10px 80px;
-    border: black 2px solid;
+    border: ${(props) => props.theme.colours.text} 2px solid;
     font-family: 'Lora', serif;
-    background: white;
+    background: ${(props) => props.theme.colours.formBackground};
+    color: ${(props) => props.theme.colours.text};
     margin: 15px;
     font-size: clamp(0.7rem, 2vw, 1rem);
 

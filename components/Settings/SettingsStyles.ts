@@ -1,23 +1,12 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
 
 export const StyledSettingsContainer = styled.div`
-  color: black;
+  color: ${(props) => props.theme.colours.text};
   position: relative;
   inset: 0;
   display: grid;
   place-items: center;
   `;
-
-export const StyledImage = styled(Image)`
-  position: absolute;
-  top: 60px;
-  left: 50px;
-  transition: transform 50ms cubic-bezier(.03,1.07,.42,.28);
-  &:hover{
-    transform: rotate(90deg) scale(1.1);
-  }
-`;
 
 interface SettingsModalProps {
   showing: boolean;
@@ -26,8 +15,8 @@ interface SettingsModalProps {
 export const StyledSettingsControls = styled.div<SettingsModalProps>`
   width: 60vw;
   height: 60vh;
-  background: white;
-  border: 5px solid black;
+  background: ${(props) => props.theme.colours.background};
+  border: 5px solid ${(props) => props.theme.colours.text};
   position: fixed;
   z-index: 999;
   transform: translateY(80%);

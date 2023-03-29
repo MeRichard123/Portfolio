@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const StyledMain = styled.main`
     height: 100%;
-    background-color: white;
+    background-color: ${(props) => props.theme.colours.background};
     padding: 10vh 0;
     text-align: center;
     @media screen and (max-width:900px){
@@ -27,7 +27,7 @@ export const StyledTitleSecondary = styled.h4`
 
 export const StyledBlogLink = styled.a`
   text-decoration: none;
-  color: #001a23;
+  color: ${(props) => props.theme.colours.linkColour};
   max-width: 100%;
   margin: auto;
 `;
@@ -98,7 +98,7 @@ export const StyledBlogs = styled.div`
         width: 2px;
         height: 60%;
         position: absolute;
-        background-color: black;
+        background-color: ${(props) => props.theme.colours.text};
         @media screen and (max-width:1280px){
             transform: rotate(90deg);
         }

@@ -7,6 +7,7 @@ import Nav from '../components/Navigation';
 import Footer from '../components/Footer';
 import { store } from '../store';
 import Settings from '../components/Settings/Settings';
+import ThemeWrapper from '../components/ThemeWrapper';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,10 +17,12 @@ export default function App({ Component, pageProps }: AppProps) {
         description="Fullstack web developer aiming to build sites and help people"
       />
       <Provider store={store}>
-        <Nav />
-        <Settings />
-        <Component {...pageProps} />
-        <Footer />
+        <ThemeWrapper>
+          <Nav />
+          <Settings />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeWrapper>
       </Provider>
     </>
   );

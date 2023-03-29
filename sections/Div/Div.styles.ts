@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const StyledMain = styled.section`
     height: 50vh;
-    border: 2px dashed black;
+    border: 2px dashed ${(props) => props.theme.colours.text};
     text-align: center;
     margin-top: 10vh;
     margin-bottom: 4rem;
@@ -35,7 +35,7 @@ export const StyledTitleSecondary = styled.h4`
 
 export const StyledDiv = styled.div`
     padding: 2.5rem 3.5rem;
-    border: 2px solid black;
+    border: 2px solid ${(props) => props.theme.colours.text};
     position: relative;
     font-size: 1.1rem;
 
@@ -45,7 +45,7 @@ export const StyledDiv = styled.div`
         top: -15px;
         left: 10px;
         padding: 5px;
-        background: white;
+        background: ${(props) => props.theme.colours.background};
     }
 
     &::before{
@@ -54,6 +54,6 @@ export const StyledDiv = styled.div`
         bottom: -15px;
         right: 10px;
         padding: 5px;
-        background: white;
+        background: ${(props) => props.theme.colours.background};
     }
 `;

@@ -27,6 +27,7 @@ const StyledBody = styled.div`
     margin: 30px auto;
     max-width: 120ch;
     line-height: 30px;
+    padding: 50px 0;
 `;
 
 export interface User {

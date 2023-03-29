@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const StyledFooter = styled.footer`
     padding: 2.5rem 1.5rem;
-    background: #353535;
+    background: ${(props) => props.theme.colours.footerBackground};
     color: white;
 `;
 

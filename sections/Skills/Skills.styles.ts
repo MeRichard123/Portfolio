@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const StyledMain = styled.main`
     height: 100%;
     padding: 10vh;
-    background: #f6f6f6;
+    background: ${(props) => props.theme.colours.section};
     text-align: center;
 `;
 

@@ -1,15 +1,46 @@
 /* Main Navigation Styles */
 
   /* --nav-bg: #7a9e7e; */
-$nav-bg: #fff;
-$logo-clr: #000;
-$text-clr: black;
 $anim-speed: 0.3s;
 $marginMobile: 20px;
 $marginDesktop: 80px;
 
+
+$themes: (
+  dark: (
+    'nav-bg': #000,
+    'logo-clr':#fff,
+    'text-clr':#fff,
+  ),
+  light: (
+    'nav-bg': #fff,
+    'logo-clr': #000,
+    'text-clr': #000
+  )
+
+);
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    html.#{$theme} & {
+      @content;    // the content inside @include theme() {...}
+    }
+  }
+  $theme-map: null !global;
+}
+
+
+
 .nav {
-  background: $nav-bg;
+  @include theme() {
+    background-color: theme-get('nav-bg');
+    color: theme-get('text-clr');
+  }
   transition: all 250ms ease-in-out;
   padding: 1rem 0.5rem 1rem 0.5rem;
   position: fixed;
@@ -19,11 +50,15 @@ $marginDesktop: 80px;
 }
 .navLogo {
   text-decoration: none;
-  color: $logo-clr;
+  @include theme() {
+    color: theme-get('logo-clr');
+  }
 }
 
 .navLogo:hover {
-  color: $logo-clr;
+  @include theme(){
+    color: theme-get('logo-clr')
+  }
 }
 
 .navLogo:focus {
@@ -31,7 +66,9 @@ $marginDesktop: 80px;
 }
 
 .navLink a {
-  color: $text-clr;
+  @include theme(){
+    color: theme-get('text-clr')
+  }
   text-decoration: none;
 }
 
@@ -60,8 +97,10 @@ $marginDesktop: 80px;
 .navLink {
   margin-top: 50px;
   cursor: pointer;
-  color: $text-clr;
   position: relative;
+  @include theme(){
+    color: theme-get('text-clr')
+  }
 }
 
 .nav a:hover,
@@ -125,7 +164,9 @@ $marginDesktop: 80px;
   width: 30px;
   height: 3px;
   display: flex;
-  background: $text-clr;
+   @include theme(){
+    background: theme-get('text-clr');
+  };
   transition: opacity 0.5s ease;
 }
 
@@ -136,7 +177,9 @@ $marginDesktop: 80px;
   width: 30px;
   border-radius: 1px;
   height: 3px;
-  background: $text-clr;
+  @include theme(){
+    background: theme-get('text-clr');
+  };
   transition: transform 0.5s cubic-bezier(1, -0.47, 1, 1.45);
   opacity: 1;
 }
