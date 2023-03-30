@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from '@emotion/styled';
 import { toggleADHDMode, setTheme, Theme } from '../../store/settingsSlice';
@@ -16,8 +16,8 @@ const GearButton = styled.button`
   left: 50px;
   border: 0;
   background: transparent;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   transform-origin:center;
   transition: transform 50ms cubic-bezier(.03,1.07,.42,.28);
   &:hover{
@@ -28,6 +28,14 @@ const GearButton = styled.button`
     width: 100%;
     stroke: ${(props) => props.theme.colours.text};
   }
+  @media screen and (max-width: 900px){
+    left: 25px;
+    top: 70px;
+  }
+`;
+
+const Spacer = styled.div`
+  margin-top: 30px;
 `;
 
 const clearThemes = (newTheme: string) => {
@@ -68,6 +76,8 @@ function Settings() {
           </StyledSwitchContainer>
           <p>{isADHDMode && 'On'}</p>
         </StyledSwitch>
+        {isADHDMode && 'This feature is coming soon'}
+        <Spacer>
         <p>Colours:</p>
         <StyledThemeButtons>
           <ThemeButton
@@ -91,7 +101,7 @@ function Settings() {
               dispatch(setTheme(Theme.DarkMode));
               clearThemes('dark'); 
             }}
-          />
+            />
           <ThemeButton
             colourLeft="#fce5e5"
             colourRight="#ff7474"
@@ -113,7 +123,7 @@ function Settings() {
               dispatch(setTheme(Theme.GreenMode));
               clearThemes('green'); 
             }}
-          />
+            />
           <ThemeButtonPride
             selected={selectedValue}
             id={5}
@@ -122,7 +132,7 @@ function Settings() {
               dispatch(setTheme(Theme.PrideMode));
               clearThemes('pride'); 
             }}
-          />
+            />
         </StyledThemeButtons>
         <div>
           {selectedValue === 1 && <p>Very clean. Love it.</p>}
@@ -131,6 +141,7 @@ function Settings() {
           {selectedValue === 4 && <p>Feeling Nostalgic?</p>}
           {selectedValue === 5 && <p>Slay Queen 💅🏳‍🌈</p>}
         </div>
+            </Spacer>
       </StyledSettingsControls>
 
     </StyledSettingsContainer>

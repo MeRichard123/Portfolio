@@ -18,11 +18,14 @@ export const StyledSettingsControls = styled.div<SettingsModalProps>`
   background: ${(props) => props.theme.colours.background};
   border: 5px solid ${(props) => props.theme.colours.text};
   position: fixed;
-  z-index: 999;
+  z-index: 500;
   transform: translateY(80%);
   display: ${(props) => (props.showing ? 'block' : 'none')};
   padding: 2.5rem;
   text-align: center;
+  @media screen and (max-width:900px){
+    width: 70vw;
+  }
 `;
 
 export const StyledSwitchContainer = styled.label`
@@ -86,6 +89,9 @@ export const StyledSwitch = styled.div`
     position: absolute;
     left: 50px;
   }
+  @media screen and (max-width: 900px){
+    width: 100%;
+  }
 `;
 
 export const StyledThemeButtons = styled.div`
@@ -93,6 +99,7 @@ export const StyledThemeButtons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
   margin: 20px auto;
 `;
 
