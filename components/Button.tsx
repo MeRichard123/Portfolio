@@ -1,13 +1,15 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import Link from 'next/link';
 import styled from '@emotion/styled';
-
 
 const StyledButton = styled.button`
     transition: padding 250ms ease;
     padding: 10px 50px;
-    border: black 2px solid;
+    border: ${(props) => props.theme.colours.text} 2px solid;
+    color: ${(props) => props.theme.colours.text};
     font-family: 'Lora', serif;
-    background: white;
+    background: transparent;
+    // background: ${(props) => props.theme.colours.background};
     margin: 15px;
     font-size: clamp(0.7rem, 2vw, 1rem);
 
@@ -17,29 +19,32 @@ const StyledButton = styled.button`
 `;
 
 type Props = {
-    darkTheme?: boolean,
+    // darkTheme?: boolean,
     children?: string;
     link: string;
     isExternal?: boolean;
 }
 
-const Button = ({children, darkTheme, link, isExternal}: Props) => {
+function Button({
+  children, link, isExternal,
+}: Props) {
   return (
-      <>
-          {isExternal ? (
-              <Link href={link} target="_blank" rel="noopener noreferrer">
-                  <StyledButton>
-                    {children}
-                  </StyledButton>
-              </Link>) : (
-                  <Link href={link}>
-                      <StyledButton>
-                        {children}
-                      </StyledButton>
-                  </Link>
-              )}
+    <>
+      {isExternal ? (
+        <Link href={link} target="_blank" rel="noopener noreferrer">
+          <StyledButton>
+            {children}
+          </StyledButton>
+        </Link>
+      ) : (
+        <Link href={link}>
+          <StyledButton>
+            {children}
+          </StyledButton>
+        </Link>
+      )}
     </>
-  )
+  );
 }
 
-export default Button
+export default Button;

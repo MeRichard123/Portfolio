@@ -1,9 +1,8 @@
-import {useLayoutEffect} from 'react'
+import { useLayoutEffect } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import { DiDjango, DiReact } from 'react-icons/di';
 import Card from './Card';
-
-import { DiDjango, DiReact } from "react-icons/di";
 
 const fadeIn = keyframes`
   0%{
@@ -26,32 +25,31 @@ interface ProjectType{
   projectPageLink: string;
 }
 
-
 const projects:ProjectType[] = [
   {
     image: '/assets/projects/GitMerged.png',
     overlayIcons: [<DiDjango key={1} />],
-    projectPageLink: "/projects/gitmerged",
+    projectPageLink: '/projects/gitmerged',
   },
   {
     image: '/assets/projects/TreeMe.png',
     overlayIcons: [<DiDjango key={1} />, <DiReact key={2} />],
-    projectPageLink: "/projects/treeme",
+    projectPageLink: '/projects/treeme',
   },
   {
     image: '/assets/projects/KSTABLER.png',
     overlayIcons: [<DiReact key={1} />, <DiDjango key={2} />],
-      projectPageLink: "/projects/kstabler",
-  }
+    projectPageLink: '/projects/kstabler',
+  },
 ];
 
-const FullStackCardList = () => {
+function FullStackCardList() {
   // Trigger animation when the component mounts to create a smooth transitions
   useLayoutEffect(() => {
-    const div = document.querySelector("#cards");
-    div!.classList.add("animate");
+    const div = document.querySelector('#cards');
+    div!.classList.add('animate');
     return () => {
-      div!.classList.remove("animate");
+      div!.classList.remove('animate');
     };
   }, []);
   return (
@@ -68,6 +66,6 @@ const FullStackCardList = () => {
       </Anim>
     </div>
   );
-};
+}
 
 export default FullStackCardList;

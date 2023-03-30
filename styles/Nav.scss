@@ -1,29 +1,80 @@
 /* Main Navigation Styles */
 
   /* --nav-bg: #7a9e7e; */
-$nav-bg: #fff;
-$logo-clr: #000;
-$text-clr: black;
 $anim-speed: 0.3s;
 $marginMobile: 20px;
 $marginDesktop: 80px;
 
+
+$themes: (
+  dark: (
+    'nav-bg': #000,
+    'logo-clr':#fff,
+    'text-clr':#fff,
+  ),
+  light: (
+    'nav-bg': #fff,
+    'logo-clr': #000,
+    'text-clr': #000
+  ),
+  green: (
+    'nav-bg': #E8F1F2,
+    'logo-clr': #001A23,
+    'text-clr': #001A23
+  ),
+  pink: (
+    'nav-bg': #fce5e5,
+    'logo-clr': #000,
+    'text-clr': #000,
+  ),
+  pride: (
+    // 'nav-bg': #F2B9B9,
+    'nav-bg':linear-gradient(90deg, rgba(255,127,127,1) 0%, rgba(255,180,129,1) 25%, rgba(255,250,139,1) 50%, rgba(156,255,134,1) 76%, rgba(137,216,255,1) 100%),
+    'logo-clr': #000,
+    'text-clr': #000,
+  )
+);
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    html.#{$theme} & {
+      @content;    // the content inside @include theme() {...}
+    }
+  }
+  $theme-map: null !global;
+}
+
+
+
 .nav {
-  background: $nav-bg;
+  @include theme() {
+    background: theme-get('nav-bg');
+    color: theme-get('text-clr');
+  }
   transition: all 250ms ease-in-out;
   padding: 1rem 0.5rem 1rem 0.5rem;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 990;
+  box-shadow: 0px 15px 24px -15px rgba(149, 157, 165, 0.2);
 }
 .navLogo {
   text-decoration: none;
-  color: $logo-clr;
+  @include theme() {
+    color: theme-get('logo-clr');
+  }
 }
 
 .navLogo:hover {
-  color: $logo-clr;
+  @include theme(){
+    color: theme-get('logo-clr')
+  }
 }
 
 .navLogo:focus {
@@ -31,7 +82,9 @@ $marginDesktop: 80px;
 }
 
 .navLink a {
-  color: $text-clr;
+  @include theme(){
+    color: theme-get('text-clr')
+  }
   text-decoration: none;
 }
 
@@ -47,8 +100,9 @@ $marginDesktop: 80px;
   height: 0;
   transition: 250ms height ease-in-out;
   overflow: hidden;
-  margin: 0 $marginMobile;
+  // margin: 0 $marginMobile;
   text-align: center;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 15px 24px -15px;
 }
 
 .active {
@@ -60,8 +114,10 @@ $marginDesktop: 80px;
 .navLink {
   margin-top: 50px;
   cursor: pointer;
-  color: $text-clr;
   position: relative;
+  @include theme(){
+    color: theme-get('text-clr')
+  }
 }
 
 .nav a:hover,
@@ -112,6 +168,8 @@ $marginDesktop: 80px;
   right: 10px;
   top: 15px;
   padding: 0.5rem;
+  background: transparent;
+  border: 0;
 }
 
 .hamburger:hover {
@@ -123,7 +181,9 @@ $marginDesktop: 80px;
   width: 30px;
   height: 3px;
   display: flex;
-  background: $text-clr;
+   @include theme(){
+    background: theme-get('text-clr');
+  };
   transition: opacity 0.5s ease;
 }
 
@@ -134,7 +194,9 @@ $marginDesktop: 80px;
   width: 30px;
   border-radius: 1px;
   height: 3px;
-  background: $text-clr;
+  @include theme(){
+    background: theme-get('text-clr');
+  };
   transition: transform 0.5s cubic-bezier(1, -0.47, 1, 1.45);
   opacity: 1;
 }
@@ -221,6 +283,8 @@ $marginDesktop: 80px;
     height: 3rem;
     display: flex;
     align-items: center;
+    box-shadow: initial;
+    margin: 0 $marginMobile;
   }
   .navLink {
     margin: 0 5px;
@@ -234,5 +298,6 @@ $marginDesktop: 80px;
     align-items: center;
     justify-content: space-between;
     padding: 0;
+    box-shadow: none;
   }
 }

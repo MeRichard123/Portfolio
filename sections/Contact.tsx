@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const FormSection = styled.section`
-  background: #E0E0E0;
+  background: ${(props) => props.theme.colours.formBackground};
   padding: 1rem 1.5rem 0 1.5rem;
   min-height: 80vh;
   justify-content: center;
@@ -41,6 +41,7 @@ const Input = styled.input`
   text-align: left;
   width: 100%;
   margin: 10px 0 20px 0;
+  background: ${(props) => props.theme.colours.background}
   `;
 const TextArea = styled.textarea`
   font-family: 'Lora', serif;
@@ -49,12 +50,14 @@ const TextArea = styled.textarea`
   width: 100%;
   text-align: left;
   margin: 10px;
+  background: ${(props) => props.theme.colours.background}
 `;
 const Button = styled.input`
     padding: 10px 80px;
-    border: black 2px solid;
+    border: ${(props) => props.theme.colours.text} 2px solid;
     font-family: 'Lora', serif;
-    background: white;
+    background: ${(props) => props.theme.colours.formBackground};
+    color: ${(props) => props.theme.colours.text};
     margin: 15px;
     font-size: clamp(0.7rem, 2vw, 1rem);
 
@@ -71,25 +74,23 @@ const Description = styled.p`
     font-size: 1.2rem;
 `;
 
-
-
-const Contact = () => {
+function Contact() {
   return (
     <FormSection id="contact">
       <Title>Get In Touch?</Title>
       <Description>Have an Idea? Let&apos;s make it happen</Description>
-      <Form method="post" name="contact" action='https://formspree.io/f/mzbwnelw'>
+      <Form method="post" name="contact" action="https://formspree.io/f/mzbwnelw">
         <input type="hidden" name="form-name" value="contact" />
         <Label htmlFor="name">Name:</Label>
         <Input type="text" name="name" id="name" required />
         <Label htmlFor="email">Email:</Label>
         <Input type="email" name="email" id="email" required />
         <Label htmlFor="message">Message:</Label>
-        <TextArea name="message" id="message" cols={30} rows={10}></TextArea>
+        <TextArea name="message" id="message" cols={30} rows={10} />
         <Button type="submit" value="Send" />
       </Form>
     </FormSection>
   );
-};
+}
 
 export default Contact;

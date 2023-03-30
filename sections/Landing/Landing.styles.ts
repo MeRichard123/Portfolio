@@ -8,6 +8,8 @@ export const StyledLandingSection = styled.section`
     justify-content: center;
     margin: 0 10px;
     text-align: center;
+    background-color: ${(props) => props.theme.colours.background};
+    color: ${(props) => props.theme.colours.text};
 `;
 
 export const StyledHeading = styled.h1`

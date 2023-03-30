@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const StyledMain = styled.main`
     height: 100%;
     padding: 10vh;
-    background: #f6f6f6;
+    background: ${(props) => props.theme.colours.section};
     text-align: center;
 `;
 
@@ -25,7 +25,7 @@ export const StyledFlexContainer = styled.div`
     }   
 `;
 
-export const StyledDescription = styled.div`
+export const StyledDescription = styled.p`
     grid-column: 2/3;
     grid-row: 1/1;
     max-width: 30ch;

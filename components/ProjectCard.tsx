@@ -4,7 +4,7 @@ const Card = styled.div`
   padding: 20px 10px;
   margin: 15px;
   width: 20rem;
-  background: #f6f6f6;
+  background: ${(props) => props.theme.colours.section};
   display: flex;
   justify-content: space-evenly;
 `;
@@ -17,7 +17,7 @@ const Button = styled.a`
   text-decoration: none;
   padding: 5px;
   width: 4em;
-  border: 2px solid black;
+  border: 2px solid ${(props) => props.theme.colours.text};
   transition: all 250ms ease;
   &:hover {
     color: white;
@@ -28,6 +28,7 @@ const Button = styled.a`
 const Image = styled.img`
   height: 5rem;
   margin: auto 10px;
+  filter: invert(${(props) => (props.theme.colours.text === '#fff' ? '100%' : '0%')});
 `;
 
 interface CardProps{
@@ -38,13 +39,15 @@ interface CardProps{
     hasSite: boolean;
 }
 
-const ProjectCard = ({ title, desc, site, code, hasSite }:CardProps) => {
+function ProjectCard({
+  title, desc, site, code, hasSite,
+}:CardProps) {
   return (
     <Card>
       <Image src="/assets/github-icon.svg" alt="github logo" />
       <div>
         <h3>{title}</h3>
-  
+
         <p>{desc}</p>
         <FlexContainer>
           {hasSite ? (
@@ -52,7 +55,7 @@ const ProjectCard = ({ title, desc, site, code, hasSite }:CardProps) => {
               Site
             </Button>
           ) : (
-            ""
+            ''
           )}
 
           <Button href={code} target="_blank">
@@ -62,6 +65,6 @@ const ProjectCard = ({ title, desc, site, code, hasSite }:CardProps) => {
       </div>
     </Card>
   );
-};
+}
 
 export default ProjectCard;

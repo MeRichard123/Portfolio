@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-const BlogLink = {
-  textDecoration: "none",
-  color: "#001a23",
-  margin: "15px",
-};
+const BlogLink = styled(Link)`
+  textDecoration: 'none';
+  color: ${(props) => props.theme.colours.linkColour};
+  margin: '15px';
+`;
 const BlogItem = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
-  background: #f6f6f6;
+  background: ${(props) => props.theme.colours.section};
   width: 600px;
   cursor: pointer;
   margin: 1.5rem;
@@ -80,9 +80,11 @@ interface CardProps{
     slug: string;
 }
 
-const BlogCard = ({ title, date, desc, tags, slug }:CardProps) => {
+function BlogCard({
+  title, date, desc, tags, slug,
+}:CardProps) {
   return (
-    <Link href={`/blogs/${slug}`} style={BlogLink}>
+    <BlogLink href={`/blogs/${slug}`}>
       <BlogItem>
         <Narrative>
           <BlogTitle>{title}</BlogTitle>
@@ -95,8 +97,8 @@ const BlogCard = ({ title, date, desc, tags, slug }:CardProps) => {
           </BlogTags>
         </Narrative>
       </BlogItem>
-    </Link>
+    </BlogLink>
   );
-};
+}
 
 export default BlogCard;

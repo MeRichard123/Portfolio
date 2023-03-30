@@ -1,7 +1,7 @@
-import {getArticle, getArticleSlugs} from '../../lib/blogs';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import MarkdownView from 'react-showdown';
+import { getArticle, getArticleSlugs } from '../../lib/blogs';
 
 // if you ever do dark mode remove the path to css and leave the first part
 // it comes with prefers colour scheme.
@@ -27,8 +27,8 @@ const StyledBody = styled.div`
     margin: 30px auto;
     max-width: 120ch;
     line-height: 30px;
+    padding: 50px 0;
 `;
-
 
 export interface User {
     name: string;
@@ -75,52 +75,49 @@ interface PropTypes {
     article: ArticleType;
 }
 
-
-const blog = ({article}: PropTypes) => {
-  return (
-      <StyledMain>
-          <StyledTitle>{article.title}</StyledTitle>
-      {/* // TypeError: Cannot destructure property 'auth' of 'urlObj' as it is undefined 
+const blog = ({ article }: PropTypes) => (
+  <StyledMain>
+    <StyledTitle>{article.title}</StyledTitle>
+    {/* // TypeError: Cannot destructure property 'auth' of 'urlObj' as it is undefined
       // https://github.com/wpengine/faustjs/issues/361
       // this was fixed by ?? '' */}
-          <Link href={article.url ?? ''} target="_blank" rel="noopener noreferrer">   
-              <StyledLink>
-                  Read the Original on Dev.to
-            </StyledLink>
-          </Link>
-          <StyledBody className="markdown-body">
-              <MarkdownView
-            markdown={article.body_markdown}
-            style={{
-              maxWidth: "70%",
-              textAlign: "left"
-            }}
-              />
-          </StyledBody>
-    </StyledMain>
-  )
-}
-// ISR Magic 
+    <Link href={article.url ?? ''} target="_blank" rel="noopener noreferrer">
+      <StyledLink>
+        Read the Original on Dev.to
+      </StyledLink>
+    </Link>
+    <StyledBody className="markdown-body">
+      <MarkdownView
+        markdown={article.body_markdown}
+        style={{
+          maxWidth: '70%',
+          textAlign: 'left',
+        }}
+      />
+    </StyledBody>
+  </StyledMain>
+);
+// ISR Magic
 export const getStaticPaths = async () => {
-    const slugs = await getArticleSlugs();
-    const paths: string[] = slugs;
+  const slugs = await getArticleSlugs();
+  const paths: string[] = slugs;
 
-    return {
-        paths,
-        fallback: 'blocking',
-    }
-}
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+};
 
-export const getStaticProps = async ({params}:any) => {
-    const articleData = await getArticle(params.blog);
-    const ArticleData: ArticleType[] = articleData;
+export const getStaticProps = async ({ params }:any) => {
+  const articleData = await getArticle(params.blog);
+  const ArticleData: ArticleType[] = articleData;
 
-    return {
-        props: {
-            article: ArticleData
-        },
-        revalidate: 10,
-    }
-}
+  return {
+    props: {
+      article: ArticleData,
+    },
+    revalidate: 10,
+  };
+};
 
-export default blog
+export default blog;
