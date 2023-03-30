@@ -16,8 +16,22 @@ $themes: (
     'nav-bg': #fff,
     'logo-clr': #000,
     'text-clr': #000
+  ),
+  green: (
+    'nav-bg': #E8F1F2,
+    'logo-clr': #001A23,
+    'text-clr': #001A23
+  ),
+  pink: (
+    'nav-bg': #fce5e5,
+    'logo-clr': #000,
+    'text-clr': #000,
+  ),
+  pride: (
+    'nav-bg': #F2B9B9,
+    'logo-clr': #000,
+    'text-clr': #000,
   )
-
 );
 
 @function theme-get($key) {

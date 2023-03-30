@@ -23,11 +23,25 @@ a {
   background: #000;
 }
 
-
 .light{
   color: black;
   background: white;
 }
+
+.green{
+  color: #001A23;
+  background: #E8F1F2;  
+}
+.pink{
+  color: #000;
+  background: #fce5e5;
+}
+
+.pride{
+  color: #000;
+  background: linear-gradient(90deg, rgba(255,127,127,1) 0%, rgba(255,180,129,1) 25%, rgba(255,250,139,1) 50%, rgba(156,255,134,1) 76%, rgba(137,216,255,1) 100%);
+}
+
 /*
 css-rivkbn
 css-1tdu655

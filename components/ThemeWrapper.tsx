@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@emotion/react';
-import { LightTheme, DarkTheme, AppTheme } from '../lib/themes';
+import { LightTheme, DarkTheme, GreenTheme, PinkTheme, PrideTheme, AppTheme } from '../lib/themes';
 import { RootState } from '../store/store';
 import { Theme } from '../store/settingsSlice';
 
@@ -20,6 +20,15 @@ function ThemeWrapper({ children }: WrapperProps) {
         break;
       case Theme.DarkMode:
         setCurrentTheme(DarkTheme);
+        break;
+      case Theme.PinkMode:
+        setCurrentTheme(PinkTheme);
+        break;
+      case Theme.GreenMode:
+        setCurrentTheme(GreenTheme);
+        break;
+      case Theme.PrideMode:
+        setCurrentTheme(PrideTheme);
         break;
       default:
         setCurrentTheme(LightTheme);

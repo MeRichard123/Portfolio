@@ -10,6 +10,7 @@ function Landing() {
         <StyledHeading>Hi, I&apos;m Richard!</StyledHeading>
         <StyledHeadingSecondary>
           A
+          {' '}
           <StyledSpan>Fullstack Software Developer</StyledSpan>
         </StyledHeadingSecondary>
         <StyledHeadingSecondary>and Creative Coder</StyledHeadingSecondary>

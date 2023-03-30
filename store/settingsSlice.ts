@@ -5,8 +5,11 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 // eslint-disable-next-line no-shadow
 export enum Theme {
-    LightMode,
-    DarkMode
+  LightMode,
+  DarkMode,
+  PinkMode,
+  GreenMode,
+  PrideMode
 }
 
 export interface SettingsStateType {

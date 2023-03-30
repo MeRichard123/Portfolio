@@ -8,6 +8,7 @@ import {
   StyledSwitchContainer, StyledThemeButtons,
 } from './SettingsStyles';
 import ThemeButton from './ThemeButton';
+import ThemeButtonPride from './ThemeButtonPride';
 
 const GearButton = styled.button`
   position: absolute;
@@ -28,6 +29,19 @@ const GearButton = styled.button`
     stroke: ${(props) => props.theme.colours.text};
   }
 `;
+
+const clearThemes = (newTheme: string) => {
+  const html = document.querySelector('html')?.classList;
+  const allThemes = ['light', 'dark', 'pink', 'green', 'pride'];
+  allThemes.forEach(theme => {
+    if (theme != newTheme) {
+      if (html?.contains(theme)) {
+        html.remove(theme);
+      }
+      html?.add(newTheme);
+    }  
+  })
+}
 
 function Settings() {
   const [open, setOpen] = useState<boolean>(false);
@@ -64,13 +78,7 @@ function Settings() {
             OnClick={() => {
               setSelectedValue(1);
               dispatch(setTheme(Theme.LightMode));
-              const html = document.querySelector('html');
-              if (html?.classList.contains('dark')) {
-                html?.classList.remove('dark');
-                html?.classList.add('light');
-              } else {
-                html?.classList.add('light');
-              }
+              clearThemes('light'); 
             }}
           />
           <ThemeButton
@@ -81,17 +89,48 @@ function Settings() {
             OnClick={() => {
               setSelectedValue(2);
               dispatch(setTheme(Theme.DarkMode));
-              const html = document.querySelector('html');
-              if (html?.classList.contains('light')) {
-                html?.classList.remove('light');
-                html?.classList.add('dark');
-              } else {
-                html?.classList.add('dark');
-              }
+              clearThemes('dark'); 
+            }}
+          />
+          <ThemeButton
+            colourLeft="#fce5e5"
+            colourRight="#ff7474"
+            selected={selectedValue}
+            id={3}
+            OnClick={() => {
+              setSelectedValue(3);
+              dispatch(setTheme(Theme.PinkMode));
+              clearThemes('pink');
+            }}
+          />
+          <ThemeButton
+            colourLeft="#E8F1F2"
+            colourRight="#31493C"
+            selected={selectedValue}
+            id={4}
+            OnClick={() => {
+              setSelectedValue(4);
+              dispatch(setTheme(Theme.GreenMode));
+              clearThemes('green'); 
+            }}
+          />
+          <ThemeButtonPride
+            selected={selectedValue}
+            id={5}
+            OnClick={() => {
+              setSelectedValue(5);
+              dispatch(setTheme(Theme.PrideMode));
+              clearThemes('pride'); 
             }}
           />
         </StyledThemeButtons>
-
+        <div>
+          {selectedValue === 1 && <p>Very clean. Love it.</p>}
+          {selectedValue === 2 && <p>Oooh I see how it is.</p>}
+          {selectedValue === 3 && <p>Very Exotic. Nice.</p>}
+          {selectedValue === 4 && <p>Feeling Nostalgic?</p>}
+          {selectedValue === 5 && <p>Slay Queen 💅🏳‍🌈</p>}
+        </div>
       </StyledSettingsControls>
 
     </StyledSettingsContainer>

@@ -95,3 +95,9 @@ export const StyledThemeButtons = styled.div`
   gap: 20px;
   margin: 20px auto;
 `;
+
+export const PrideThemeButton = styled.span`
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg, rgba(255,127,127,1) 0%, rgba(255,180,129,1) 25%, rgba(255,250,139,1) 50%, rgba(156,255,134,1) 76%, rgba(137,216,255,1) 100%);
+`;
