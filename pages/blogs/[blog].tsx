@@ -24,7 +24,8 @@ const StyledBody = styled.div`
     display: flex;
     justify-content: center;
     font-family: 'Lora', serif;
-    margin: 30px auto;
+    font-size: 70%;
+    margin: 30px 10px;
     max-width: 120ch;
     line-height: 30px;
     padding: 50px 0;
@@ -90,7 +91,6 @@ const blog = ({ article }: PropTypes) => (
       <MarkdownView
         markdown={article.body_markdown}
         style={{
-          maxWidth: '70%',
           textAlign: 'left',
         }}
       />
