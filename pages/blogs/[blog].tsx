@@ -91,7 +91,7 @@ const blog = ({ article }: PropTypes) => (
       <MarkdownView
         markdown={article.body_markdown}
         style={{
-          maxWidth: '80%',
+          maxWidth: '90%',
           textAlign: 'left',
         }}
       />
