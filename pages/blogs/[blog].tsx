@@ -29,6 +29,9 @@ const StyledBody = styled.div`
     max-width: 120ch;
     line-height: 30px;
     padding: 50px 0;
+    @media screen and (min-width:900px) {
+        margin: 30px 50px;
+    }
 `;
 
 export interface User {
