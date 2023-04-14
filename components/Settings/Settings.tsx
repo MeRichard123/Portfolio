@@ -57,6 +57,19 @@ function Settings() {
   const dispatch = useDispatch();
   const isADHDMode: boolean = useSelector((state: RootState) => state.settings.ADHDMode);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const matches = window.matchMedia("(prefers-color-scheme: dark)");
+    if (matches.matches) { 
+      dispatch(setTheme(Theme.DarkMode));
+      clearThemes('dark');
+    } else {
+      dispatch(setTheme(Theme.LightMode));
+      clearThemes('light');
+    }
+  }, []);
+
   return (
     <StyledSettingsContainer>
       <GearButton onClick={() => setOpen((previousState) => !previousState)} type="button">

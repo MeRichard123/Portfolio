@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import MarkdownView from 'react-showdown';
@@ -5,7 +6,7 @@ import { getArticle, getArticleSlugs } from '../../lib/blogs';
 
 // if you ever do dark mode remove the path to css and leave the first part
 // it comes with prefers colour scheme.
-import 'github-markdown-css/github-markdown-light.css';
+import 'github-markdown-css';
 
 const StyledMain = styled.main`
     text-align: center;
@@ -30,7 +31,8 @@ const StyledBody = styled.div`
     line-height: 30px;
     padding: 50px 0;
     @media screen and (min-width:900px) {
-        margin: 30px;
+        margin: 30px auto;
+        font-size: 100%;
     }
 `;
 

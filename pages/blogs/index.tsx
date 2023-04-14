@@ -11,7 +11,8 @@ const FlexContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
+  gap: 10px;
 `;
 
 export interface User {
