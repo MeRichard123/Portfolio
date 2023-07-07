@@ -11,74 +11,42 @@ export const StyledFlexContainer = styled.div`
     display: grid;
     place-items: center;
     padding: 25px;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: dense;
-
-    @media screen and (max-width: 900px) {
-        padding: 1px;
-        display: flex;
-        flex-direction: column;
-    }
-    @media screen and (min-width: 2200px) {
-        max-width: 70%;
-        margin: auto;
-    }   
 `;
 
 export const StyledDescription = styled.p`
-    grid-column: 2/3;
-    grid-row: 1/1;
-    max-width: 30ch;
-    text-align: justify;
-    margin: 30px 0;
-    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    max-width: 50ch;
+    text-align: center;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
 `;
 
 export const StyledSkillsContainer = styled.div`
-    display: grid;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledSkillDivision = styled.div`
+  padding: 50px;
+  margin: 0 20px;
+  min-width: 30ch;
+  text-align: left;
+  min-height: 25ch;
+`;
+
+export const StyledSkillTitle = styled.h3`
+  margin: 10px 0 20px -20px;
+  position: relative;
+  width: 100%;
+  &::after{
+    content: '';
+    height: 3px;
     width: 100%;
-    grid-column: 1/2;
-    grid-row: 1/1;
-    align-content: center;
-    justify-items: center;
-    margin: auto;
-    gap: 20px;
-    padding: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-    @media screen and (max-width: 900px) {
-        padding: 15px;
-        gap: 10px;
-    }
+    background: ${props => props.theme.colours.text};
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+  }
 `;
 
-export const StyledIcon = styled.div`
-    box-sizing: border-box;
-    object-fit: contain;
-    align-items: center;
-    filter: grayscale(1);
-    transition: all 0.5s ease-out;
-    &:hover,
-    &:focus {
-        filter: grayscale(0);
-    }
-    @media screen and (min-width: 1900px) {
-        width: 105px;
-        height: calc(75px * 2);
-    } 
-`;
-
-export const StyledModifiedIcon = styled.div`
-    box-sizing: border-box;
-    object-fit: contain;
-    align-items: center;
-    transition: all 0.5s ease-out; 
-    opacity: 0.7;
-    &:hover,
-    &:focus {
-        opacity: 1;
-    }
-    @media screen and (min-width: 1900px) {
-        width: 105px;
-        height: calc(75px * 2);
-    }
-`;

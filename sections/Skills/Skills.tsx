@@ -1,38 +1,48 @@
-import ReactTooltip from 'react-tooltip';
 import Image from 'next/image';
-import { SkillList } from './SkillsList';
 import {
   StyledMain, StyledFlexContainer, StyledDescription,
-  StyledSkillsContainer, StyledIcon, StyledModifiedIcon,
+  StyledSkillsContainer, StyledSkillDivision, StyledSkillTitle
 } from './Skills.styles';
 
-const ModIcons = ['Github', 'Express JS', 'NextJS'];
 
 function Skills() {
   return (
     <StyledMain>
-      <ReactTooltip effect="solid" padding="15px" border />
       <h2>My Tech Stack</h2>
       <StyledFlexContainer>
         <StyledDescription>
-          I have tried many different things over time but these are
-          some of my favourite technologies and utilities to use.
+          I have used a lot of different things over time but here are the things I actually
+          like using and some necessary tools.
         </StyledDescription>
         <StyledSkillsContainer>
-          {SkillList.map((skill, index) => {
-            if (ModIcons.includes(skill.title)) {
-              return (
-                <StyledModifiedIcon key={index} data-tip={skill.content}>
-                  <Image src={skill.img} width={55} height={75} alt={skill.content} />
-                </StyledModifiedIcon>
-              );
-            }
-            return (
-              <StyledIcon key={index} data-tip={skill.content}>
-                <Image src={skill.img} width={55} height={75} alt={skill.content} />
-              </StyledIcon>
-            );
-          })}
+            <StyledSkillDivision>
+              <StyledSkillTitle>Languages</StyledSkillTitle>
+              <ul>
+                <li>Rust</li>
+                <li>Typescript</li>
+                <li>C/ C++ </li>
+                <li>Python</li>
+                <li>Haskell</li>
+              </ul>
+            </StyledSkillDivision> 
+            <StyledSkillDivision>
+              <StyledSkillTitle>Frontend</StyledSkillTitle>
+                <ul>
+                  <li>VueJS</li>
+                  <li>React/ Next JS</li>
+                  <li>HTML/ CSS</li>
+                  <li>SCSS/ Tailwind</li>
+                  <li>Styled Components</li>
+                </ul>
+            </StyledSkillDivision> 
+            <StyledSkillDivision>
+              <StyledSkillTitle>Backend/ Tools</StyledSkillTitle>
+              <ul>
+                <li>Django</li>
+                <li>Express</li>
+                <li>Git</li>
+              </ul>
+          </StyledSkillDivision> 
         </StyledSkillsContainer>
       </StyledFlexContainer>
     </StyledMain>
