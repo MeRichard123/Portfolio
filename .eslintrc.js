@@ -6,7 +6,6 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    'next/core-web-vitals',
     'plugin:@next/next/recommended',
   ],
   parser: '@typescript-eslint/parser',
