@@ -2,37 +2,36 @@ import styled from '@emotion/styled';
 
 export const StyledMain = styled.main`
     height: 100%;
-    padding: 10vh;
+    padding: 70px clamp(10px, 2vw, 70px);
     background: ${(props) => props.theme.colours.section};
     text-align: center;
 `;
 
 export const StyledFlexContainer = styled.div`
-    display: grid;
+   display: grid;
     place-items: center;
-    padding: 25px;
 `;
 
 export const StyledDescription = styled.p`
     max-width: 50ch;
     text-align: center;
     font-size: clamp(1rem, 1.2vw, 1.4rem);
+    margin: 20px 0;
 `;
 
 export const StyledSkillsContainer = styled.div`
   display: flex;
-  gap: 1.5rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
 `;
 
 export const StyledSkillDivision = styled.div`
-  padding: 50px;
-  margin: 0 20px;
   min-width: 30ch;
   text-align: left;
   min-height: 25ch;
+  margin: 0 10px;
 `;
 
 export const StyledSkillTitle = styled.h3`
