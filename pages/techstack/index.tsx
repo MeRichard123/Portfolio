@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyledSkillMain, StyledSkillTitle,
   StyledSecondaryHeading, LeftAlign, StyledTertiaryHeading
-} from './stack.styles.ts';
+} from './stack.styles';
 
 
 const techstack = () => {
