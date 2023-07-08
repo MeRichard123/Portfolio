@@ -40,7 +40,7 @@ export const PrideTheme: AppTheme = {
     section: '#F2B9B969',
     formBackground: '#F2B9B969',
     linkColour: '#0E0E0E',
-    footerBackground:'#a26363',
+    footerBackground: '#a26363',
   },
 };
 export const GreenTheme: AppTheme = {
@@ -63,6 +63,3 @@ export const PinkTheme: AppTheme = {
     footerBackground: '#541616',
   },
 };
-
-
-

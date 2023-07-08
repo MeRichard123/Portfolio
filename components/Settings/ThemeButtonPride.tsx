@@ -31,4 +31,3 @@ function ThemeButtonPride({
 }
 
 export default ThemeButtonPride;
-

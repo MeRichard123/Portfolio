@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@emotion/react';
-import { LightTheme, DarkTheme, GreenTheme, PinkTheme, PrideTheme, AppTheme } from '../lib/themes';
+import {
+  LightTheme, DarkTheme, GreenTheme, PinkTheme, PrideTheme, AppTheme,
+} from '../lib/themes';
 import { RootState } from '../store/store';
 import { Theme } from '../store/settingsSlice';
 

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const StyledSkillMain = styled.main`
   padding: 80px clamp(20px, 2.5vw, 80px);
@@ -26,7 +26,7 @@ export const StyledSecondaryHeading = styled.h2`
   position: relative;
   &::after {
     content: '';
-    background: ${props => props.theme.colours.text};
+    background: ${(props) => props.theme.colours.text};
     height: 3px;
     position: absolute;
     bottom: -8px;
