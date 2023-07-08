@@ -1,9 +1,8 @@
-import Image from 'next/image';
+import Button from '../../components/Button';
 import {
   StyledMain, StyledFlexContainer, StyledDescription,
-  StyledSkillsContainer, StyledSkillDivision, StyledSkillTitle
+  StyledSkillsContainer, StyledSkillDivision, StyledSkillTitle,
 } from './Skills.styles';
-
 
 function Skills() {
   return (
@@ -15,35 +14,36 @@ function Skills() {
           like using and some necessary tools.
         </StyledDescription>
         <StyledSkillsContainer>
-            <StyledSkillDivision>
-              <StyledSkillTitle>Languages</StyledSkillTitle>
-              <ul>
-                <li>Rust</li>
-                <li>Typescript</li>
-                <li>C/ C++ </li>
-                <li>Python</li>
-                <li>Haskell</li>
-              </ul>
-            </StyledSkillDivision> 
-            <StyledSkillDivision>
-              <StyledSkillTitle>Frontend</StyledSkillTitle>
-                <ul>
-                  <li>VueJS</li>
-                  <li>React/ Next JS</li>
-                  <li>HTML/ CSS</li>
-                  <li>SCSS/ Tailwind</li>
-                  <li>Styled Components</li>
-                </ul>
-            </StyledSkillDivision> 
-            <StyledSkillDivision>
-              <StyledSkillTitle>Backend/ Tools</StyledSkillTitle>
-              <ul>
-                <li>Django</li>
-                <li>Express</li>
-                <li>Git</li>
-              </ul>
-          </StyledSkillDivision> 
+          <StyledSkillDivision>
+            <StyledSkillTitle>Languages</StyledSkillTitle>
+            <ul>
+              <li>Rust</li>
+              <li>Typescript</li>
+              <li>C/ C++ </li>
+              <li>Python</li>
+              <li>Haskell</li>
+            </ul>
+          </StyledSkillDivision>
+          <StyledSkillDivision>
+            <StyledSkillTitle>Frontend</StyledSkillTitle>
+            <ul>
+              <li>VueJS</li>
+              <li>React/ Next JS</li>
+              <li>HTML/ CSS</li>
+              <li>SCSS/ Tailwind</li>
+              <li>Styled Components</li>
+            </ul>
+          </StyledSkillDivision>
+          <StyledSkillDivision>
+            <StyledSkillTitle>Backend/ Tools</StyledSkillTitle>
+            <ul>
+              <li>Django</li>
+              <li>Express</li>
+              <li>Git</li>
+            </ul>
+          </StyledSkillDivision>
         </StyledSkillsContainer>
+        <Button link="/techstack">More Info</Button>
       </StyledFlexContainer>
     </StyledMain>
   );

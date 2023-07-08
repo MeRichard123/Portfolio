@@ -26,9 +26,9 @@ export const DarkTheme: AppTheme = {
   colours: {
     background: '#000',
     text: '#fff',
-    section: '#100D0D',
+    section: '#232323',
     formBackground: '#100D0D',
-    linkColour: '#E5E5CB',
+    linkColour: '#f6f6f6',
     footerBackground: '#000',
   },
 };

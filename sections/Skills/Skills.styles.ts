@@ -25,6 +25,7 @@ export const StyledSkillsContainer = styled.div`
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 `;
 
 export const StyledSkillDivision = styled.div`
@@ -42,10 +43,9 @@ export const StyledSkillTitle = styled.h3`
     content: '';
     height: 3px;
     width: 100%;
-    background: ${props => props.theme.colours.text};
+    background: ${(props) => props.theme.colours.text};
     position: absolute;
     left: 0;
     bottom: -8px;
   }
 `;
-

@@ -21,8 +21,9 @@ export const StyledSkillTitle = styled.h1`
 `;
 
 export const StyledSecondaryHeading = styled.h2`
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   width: 100%;
+  margin-top: 20px;
   position: relative;
   &::after {
     content: '';
@@ -36,10 +37,23 @@ export const StyledSecondaryHeading = styled.h2`
 `;
 
 export const StyledTertiaryHeading = styled.h3`
-  font-size: clamp(0.8rem, 1.5vw, 1.3rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
   margin: 30px 0;
 `;
 
-export default () => {
-  console.log('Hi');
-};
+export const StyledParagraph = styled.p`
+
+`;
+
+export const StyledLink = styled.a`
+  text-decoration: underline;
+  color: blue;
+`;
+
+export const StyledSmall = styled.small`
+  font-size: 0.8rem;
+  text-style: italic;
+  color: gray;
+`;
+
+export default () => { };

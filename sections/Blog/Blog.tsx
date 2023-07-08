@@ -14,8 +14,7 @@ function Blog() {
       </StyledTitleSecondary>
       <StyledBlogs>
         <StyledBlogLink
-          href="https://dev.to/merichard123/making-my-own-css-framework-50j9"
-          target="_blank"
+          href="/blogs/making-my-own-css-framework-50j9"
           rel="noopener noreferrer"
         >
           <StyledBlog>
@@ -30,8 +29,7 @@ function Blog() {
           </StyledBlog>
         </StyledBlogLink>
         <StyledBlogLink
-          href="https://dev.to/merichard123/my-website-process-1pg9"
-          target="_blank"
+          href="/blogs/my-website-process-1pg9"
           rel="noopener noreferrer"
         >
           <StyledBlog>
