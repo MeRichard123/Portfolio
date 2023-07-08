@@ -39,3 +39,7 @@ export const StyledTertiaryHeading = styled.h3`
   font-size: clamp(0.8rem, 1.5vw, 1.3rem);
   margin: 30px 0;
 `;
+
+export default () => {
+  console.log('Hi');
+};
