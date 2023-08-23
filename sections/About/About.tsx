@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Button from '../../components/Button';
 import {
   StyledMain, StyledAboutHeading, StyledBtnGroup, StyledPara,
@@ -15,15 +16,26 @@ const calculateAge = (): string => {
 };
 
 function About() {
+  const [ageValue, setAge] = useState<string>('');
+
+  useEffect(() => {
+    const timeout = setInterval(() => {
+      const age = calculateAge();
+      setAge(age);
+    }, 1000);
+    return () => clearInterval(timeout);
+  }, []);
   return (
     <StyledMain id="about">
       <StyledAboutHeading>About Me</StyledAboutHeading>
       <StyledPara id="pg">
         I am Richard, I am a
         {' '}
-        {calculateAge().split('').map((char, index) => (
-          <span style={
-          { fontSize: (calculateAge().length - index) + 4 }
+        {ageValue.split('').map((char, index) => (
+          <span
+            key={index}
+            style={
+          { fontSize: (ageValue.length - index) + 4 }
         }
           >
             {char}
