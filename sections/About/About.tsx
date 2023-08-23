@@ -3,28 +3,32 @@ import {
   StyledMain, StyledAboutHeading, StyledBtnGroup, StyledPara,
 } from './About.styles';
 
-const calculateAge = (): number => {
-  const date = new Date();
-  const dob = new Date('08/11/2003');
+const calculateAge = (): string => {
+  const date: Date = new Date();
+  const dob: Date = new Date('11-08-2003');
 
-  let yearDiff = date.getFullYear() - dob.getFullYear();
+  const ageInMillis = (date.getTime() - dob.getTime());
+  const ageInYears = ageInMillis / (1000 * 60 * 60 * 24 * 365.25);
+  const roundedAge = ageInYears.toFixed(11);
 
-  if (date.getMonth() < dob.getMonth()
-    || (date.getMonth() === dob.getMonth() && date.getDate() < dob.getDate())) {
-    yearDiff--;
-  }
-
-  return yearDiff;
+  return roundedAge.toString();
 };
 
 function About() {
   return (
     <StyledMain id="about">
       <StyledAboutHeading>About Me</StyledAboutHeading>
-      <StyledPara>
+      <StyledPara id="pg">
         I am Richard, I am a
         {' '}
-        {calculateAge()}
+        {calculateAge().split('').map((char, index) => (
+          <span style={
+          { fontSize: (calculateAge().length - index) + 4 }
+        }
+          >
+            {char}
+          </span>
+        ))}
         {' '}
         year old Software Developer and Computer Science Student from the UK.
         I am currently pursuing a bachelors degree at the University of Lincoln; graduating in 2025.
