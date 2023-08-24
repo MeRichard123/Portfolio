@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
-export const StyledMain = styled.section`
+// I can center a div but girl at what cost
+export const StyledMain = styled.section`    
     height: 50vh;
     border: 2px dashed ${(props) => props.theme.colours.text};
     text-align: center;

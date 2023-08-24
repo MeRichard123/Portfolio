@@ -46,6 +46,7 @@ function About() {
         I am currently pursuing a bachelors degree at the University of Lincoln; graduating in 2025.
       </StyledPara>
       <StyledPara>
+        {/* Eww react doing this weird thing,  I want to redo this in Vue. Crying fr */}
         I like to build
         {' '}
         <b>accessible</b>

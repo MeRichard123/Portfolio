@@ -23,6 +23,7 @@ export async function getAllPageIds(query:string) {
   }));
 }
 
+// GraphQL look at me being a girlboss
 const queryGen = (slug: string) => `
   {
     projectEntryCollection(where: {slug: "${slug}"}){

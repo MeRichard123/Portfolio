@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
+// css files? nah we don't do that here
 const BlogLink = styled(Link)`
   textDecoration: 'none';
   color: ${(props) => props.theme.colours.linkColour};
