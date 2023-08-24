@@ -15,7 +15,7 @@ function ThemeWrapper({ children }: WrapperProps) {
   const theme = useSelector((state: RootState) => state.settings.theme);
   const [currentTheme, setCurrentTheme] = useState<AppTheme>(LightTheme);
 
-  // gosh isn't it beautiful 
+  // gosh isn't it beautiful
   useEffect(() => {
     switch (theme) {
       case Theme.LightMode:
