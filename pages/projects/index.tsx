@@ -49,6 +49,19 @@ const StyledHighLightTitle = styled.h2`
 
 const cardData = [
   {
+    title: 'MD ToC Generator',
+    desc: 'Generate ToC for markdown files',
+    code: 'https://github.com/MeRichard123/md-contents-generator',
+    hasSite: false,
+  },
+  {
+    title: 'CodeWarsKatas',
+    desc: 'A Collection of my Code Katas.',
+    site: 'https://richardscodekatas.surge.sh/',
+    code: 'https://github.com/MeRichard123/CodeWars-CodeKatas-Collection',
+    hasSite: true,
+  },
+  {
     title: 'Pokemon App',
     desc: 'PokeApi Pokedex',
     code: 'https://github.com/merichard123/pokemon-app/',
@@ -73,13 +86,6 @@ const cardData = [
     desc: 'Typewriter Terminal',
     site: 'https://merichard123.github.io/AboutMe-Terminal/',
     code: 'https://github.com/merichard123/AboutMe-Terminal/',
-    hasSite: true,
-  },
-  {
-    title: 'Productivity Dashboard',
-    desc: 'Student dashboard app.',
-    site: 'https://merichard123.github.io/Dashboard',
-    code: 'https://github.com/merichard123/Dashboard/',
     hasSite: true,
   },
   {
@@ -122,24 +128,21 @@ const cardData = [
 
 const HightLightData = [
   {
-    title: 'Dev Bookmarks',
-    desc: 'A Place to keep track of my browser bookmarks.',
-    site: 'https://devbookmarks.surge.sh/',
-    code: 'https://github.com/MeRichard123/dev-bookmarks',
-    hasSite: true,
+    title: 'Cing-Cong',
+    desc: 'A Pong game implemented in C',
+    code: 'https://github.com/MeRichard123/cing-cong',
+    hasSite: false,
   },
   {
-    title: 'RichSnippits',
-    desc: 'An Open Collection of Code Snippets',
-    site: 'https://richsnippits.surge.sh/',
-    code: 'https://github.com/MeRichard123/RichSnippits',
-    hasSite: true,
+    title: 'Brainy-Rust',
+    desc: 'A Brainfuck interpreter written in Rust',
+    code: 'https://github.com/MeRichard123/brainy-rust',
+    hasSite: false,
   }, {
-    title: 'CodeWarsKatas',
-    desc: 'A Collection of my Code Katas.',
-    site: 'https://richardscodekatas.surge.sh/',
-    code: 'https://github.com/MeRichard123/CodeWars-CodeKatas-Collection',
-    hasSite: true,
+    title: 'richBuild',
+    desc: 'A header only C build tool written in C',
+    code: 'https://github.com/RichTools/richbuild',
+    hasSite: false,
   },
 ];
 
