@@ -1,13 +1,19 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import Link from 'next/link';
 import styled from '@emotion/styled';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
-const StyledButton = styled.button`
+interface StyleProps {
+  isBionic: boolean
+}
+
+const StyledButton = styled.button<StyleProps>`
     transition: padding 250ms ease;
     padding: 10px 50px;
     border: ${(props) => props.theme.colours.text} 2px solid;
     color: ${(props) => props.theme.colours.text};
-    font-family: 'Lora', serif;
+    font-family: ${props => props.isBionic ? 'OpenDyslexic' : 'Lora'}, arial;
     background: transparent;
     // background: ${(props) => props.theme.colours.background};
     margin: 15px;
@@ -19,26 +25,27 @@ const StyledButton = styled.button`
 `;
 
 type Props = {
-    // darkTheme?: boolean,
-    children?: string;
-    link: string;
-    isExternal?: boolean;
+  // darkTheme?: boolean,
+  children?: string;
+  link: string;
+  isExternal?: boolean;
 }
 
 function Button({
   children, link, isExternal,
 }: Props) {
+  const isADHDMode: boolean = useSelector((state: RootState) => state.settings.ADHDMode);
   return (
     <>
       {isExternal ? (
         <Link href={link} target="_blank" rel="noopener noreferrer">
-          <StyledButton>
+          <StyledButton isBionic={isADHDMode}>
             {children}
           </StyledButton>
         </Link>
       ) : (
         <Link href={link}>
-          <StyledButton>
+          <StyledButton isBionic={isADHDMode}>
             {children}
           </StyledButton>
         </Link>

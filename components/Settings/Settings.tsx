@@ -89,7 +89,6 @@ function Settings() {
           </StyledSwitchContainer>
           <p>{isADHDMode && 'On'}</p>
         </StyledSwitch>
-        {isADHDMode && 'This feature is coming soon'}
         <Spacer>
           <p>Colours:</p>
           <StyledThemeButtons>

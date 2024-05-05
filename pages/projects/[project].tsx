@@ -31,6 +31,8 @@ const project = ({ pageData }: PageDataType) => (
           style={{
             maxWidth: '80%',
             textAlign: 'left',
+            fontSize: '1.1rem',
+            fontFamily: 'Lora, arial, sans-serif',
           }}
         />
         <StyledButtonGroup>

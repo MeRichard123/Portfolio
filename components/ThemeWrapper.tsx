@@ -6,13 +6,23 @@ import {
 } from '../lib/themes';
 import { RootState } from '../store/store';
 import { Theme } from '../store/settingsSlice';
+import styled from '@emotion/styled';
 
 interface WrapperProps {
-    children: any;
+  children: any;
 }
+
+interface FontsProps {
+  isAdhd: boolean;
+}
+
+const Fonts = styled.div<FontsProps>`
+  font-family: ${props => props.isAdhd ? 'Lora' : ''}, serif !important;
+`;
 
 function ThemeWrapper({ children }: WrapperProps) {
   const theme = useSelector((state: RootState) => state.settings.theme);
+  const isADHDMode = useSelector((state: RootState) => state.settings.ADHDMode);
   const [currentTheme, setCurrentTheme] = useState<AppTheme>(LightTheme);
 
   // gosh isn't it beautiful
@@ -40,7 +50,9 @@ function ThemeWrapper({ children }: WrapperProps) {
   }, [theme]);
   return (
     <ThemeProvider theme={currentTheme}>
-      {children}
+      <Fonts isAdhd={isADHDMode}>
+        {children}
+      </Fonts>
     </ThemeProvider>
   );
 }

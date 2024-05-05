@@ -1,7 +1,12 @@
 import { useLayoutEffect } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
-import { DiDjango, DiReact } from 'react-icons/di';
+import {
+  DiDjango, DiReact, DiAndroid,
+} from 'react-icons/di';
+import { AiOutlineDotNet } from 'react-icons/ai';
+import { SiCsharp } from 'react-icons/si';
+
 import Card from './Card';
 
 const fadeIn = keyframes`
@@ -19,13 +24,18 @@ const Anim = styled.div`
   }
 `;
 
-interface ProjectType{
+interface ProjectType {
   image: string;
   overlayIcons: any[];
   projectPageLink: string;
 }
 
-const projects:ProjectType[] = [
+const projects: ProjectType[] = [
+  {
+    image: '/assets/projects/iMate.png',
+    overlayIcons: [<DiAndroid key={1} />, <AiOutlineDotNet key={2} />, <SiCsharp key={3} />],
+    projectPageLink: '/projects/imate',
+  },
   {
     image: '/assets/projects/GitMerged.png',
     overlayIcons: [<DiDjango key={1} />],
@@ -55,7 +65,7 @@ function FullStackCardList() {
   return (
     <div className="projectContainer">
       <Anim id="cards">
-        {projects.map((project:ProjectType, index:number) => (
+        {projects.map((project: ProjectType, index: number) => (
           <Card
             key={index}
             image={project.image}

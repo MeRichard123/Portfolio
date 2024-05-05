@@ -3,15 +3,21 @@ import {
   StyledMain, StyledFlexContainer, StyledDescription,
   StyledSkillsContainer, StyledSkillDivision, StyledSkillTitle,
 } from './Skills.styles';
+import Bionic from '../../components/Bionic';
+import type { RootState } from '../../store/store';
+import { useSelector } from 'react-redux';
 
 function Skills() {
+  const isADHDMode: boolean = useSelector((state: RootState) => state.settings.ADHDMode);
   return (
     <StyledMain>
       <h2>My Tech Stack</h2>
       <StyledFlexContainer>
         <StyledDescription>
-          I have used a lot of different things over time but here are the things I actually
-          like using and some necessary tools.
+          <Bionic toggleBionic={isADHDMode}>
+            I have used a lot of different things over time but here are the things I actually
+            like using and some necessary tools.
+          </Bionic>
         </StyledDescription>
         <StyledSkillsContainer>
           <StyledSkillDivision>

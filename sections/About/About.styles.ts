@@ -23,7 +23,7 @@ export const StyledPara = styled.p`
     text-align: justify;
     @media screen and (min-width: 900px){
         max-width: 60%;
-    }
+}
 `;
 
 export const StyledBtnGroup = styled.div`

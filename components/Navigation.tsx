@@ -72,7 +72,7 @@ function Nav() {
                     || router.pathname.split('/').length < 3
                     ? '/'
                     : '/blogs'
-}
+                }
                 onClick={handleClick}
               >
                 Back

@@ -42,7 +42,7 @@ export const StyledTertiaryHeading = styled.h3`
 `;
 
 export const StyledParagraph = styled.p`
-
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
 `;
 
 export const StyledLink = styled.a`
