@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const pps = [new HTMLHtmlElement()];
 
 export const ADHDify = () => {

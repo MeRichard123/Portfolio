@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@emotion/react';
+import styled from '@emotion/styled';
 import {
   LightTheme, DarkTheme, GreenTheme, PinkTheme, PrideTheme, AppTheme,
 } from '../lib/themes';
 import { RootState } from '../store/store';
 import { Theme } from '../store/settingsSlice';
-import styled from '@emotion/styled';
 
 interface WrapperProps {
   children: any;
@@ -17,7 +17,7 @@ interface FontsProps {
 }
 
 const Fonts = styled.div<FontsProps>`
-  font-family: ${props => props.isAdhd ? 'Lora' : ''}, serif !important;
+  font-family: ${(props) => (props.isAdhd ? 'Lora' : '')}, serif !important;
 `;
 
 function ThemeWrapper({ children }: WrapperProps) {

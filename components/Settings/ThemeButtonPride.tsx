@@ -1,13 +1,14 @@
+/* eslint-disable max-len */
 import styled from '@emotion/styled';
 
-interface ButtonProps{
-    selected: number;
-    id: number;
-    OnClick: () => void;
+interface ButtonProps {
+  selected: number;
+  id: number;
+  OnClick: () => void;
 }
 
-interface ContainerProps{
-    selectedButton: boolean;
+interface ContainerProps {
+  selectedButton: boolean;
 }
 
 const Container = styled.div<ContainerProps>`

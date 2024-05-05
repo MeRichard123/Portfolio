@@ -13,7 +13,7 @@ const StyledButton = styled.button<StyleProps>`
     padding: 10px 50px;
     border: ${(props) => props.theme.colours.text} 2px solid;
     color: ${(props) => props.theme.colours.text};
-    font-family: ${props => props.isBionic ? 'OpenDyslexic' : 'Lora'}, arial;
+    font-family: ${(props) => (props.isBionic ? 'OpenDyslexic' : 'Lora')}, arial;
     background: transparent;
     // background: ${(props) => props.theme.colours.background};
     margin: 15px;

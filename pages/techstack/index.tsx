@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import {
   StyledSkillMain, StyledSkillTitle,
   StyledSecondaryHeading, LeftAlign, StyledTertiaryHeading, StyledParagraph,
@@ -6,7 +7,6 @@ import {
 } from './stack.styles';
 import Bionic from '../../components/Bionic';
 import type { RootState } from '../../store/store';
-import { useSelector } from 'react-redux';
 
 const techstack = () => {
   const isADHDMode: boolean = useSelector((state: RootState) => state.settings.ADHDMode);
@@ -16,9 +16,9 @@ const techstack = () => {
       <LeftAlign>
         <StyledParagraph>
           <Bionic toggleBionic={isADHDMode}>
-            tlr; At the end of the day, I don&apos;t really have a preference, I accept every single tool
-            on this list has its flaws, but also some handy features. I decide what I use on a project
-            per project basis.
+            tlr; At the end of the day, I don&apos;t really have a preference, I accept every
+            single tool on this list has its flaws, but also some handy features. I decide what I
+            use on a project per project basis.
           </Bionic>
         </StyledParagraph>
         <StyledSecondaryHeading>Programming Languages</StyledSecondaryHeading>
@@ -167,7 +167,7 @@ const techstack = () => {
         </>
       </LeftAlign>
     </StyledSkillMain>
-  )
+  );
 };
 
 export default techstack;

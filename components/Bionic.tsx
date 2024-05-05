@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styled from '@emotion/styled';
 
 interface StyleProps {
@@ -7,9 +7,9 @@ interface StyleProps {
 
 const Paragraph = styled.div<StyleProps>`
     margin:auto;
-    font-family: ${props => props.isBionic ? 'OpenDyslexic' : 'Lora'}, arial !important;
+    font-family: ${(props) => (props.isBionic ? 'OpenDyslexic' : 'Lora')}, arial !important;
     font-size: 80%;
-`
+`;
 
 interface WrapperProps {
     children: React.ReactNode;
@@ -17,54 +17,54 @@ interface WrapperProps {
 }
 
 function emphasizeHalf(word: string): React.ReactNode {
-    const length = word.length;
-    const numberOfCharsToMakeBold = Math.floor(length / 2);
+  const { length } = word;
+  const numberOfCharsToMakeBold = Math.floor(length / 2);
 
-    return (
-        <>
-            <b>{word.slice(0, numberOfCharsToMakeBold)}</b>
-            {word.slice(numberOfCharsToMakeBold)}
-        </>
-    );
+  return (
+    <>
+      <b>{word.slice(0, numberOfCharsToMakeBold)}</b>
+      {word.slice(numberOfCharsToMakeBold)}
+    </>
+  );
 }
 
 function flattenChildren(children: React.ReactNode): string {
-    let flatText = "";
+  let flatText = '';
 
-    React.Children.forEach(children, (child) => {
-        if (React.isValidElement(child)) {
-            flatText += flattenChildren(child.props.children);
-        } else if (typeof child === "string" || typeof child === "number") {
-            flatText += child;
-        }
-    });
+  React.Children.forEach(children, (child) => {
+    if (React.isValidElement(child)) {
+      flatText += flattenChildren(child.props.children);
+    } else if (typeof child === 'string' || typeof child === 'number') {
+      flatText += child;
+    }
+  });
 
-    return flatText;
+  return flatText;
 }
 
+function Bionic({ children, toggleBionic }: WrapperProps) {
+  const text = flattenChildren(children);
 
-const Bionic = ({ children, toggleBionic }: WrapperProps) => {
-
-    const text = flattenChildren(children);
-
-    return (
-        <Paragraph isBionic={toggleBionic}>
-            {toggleBionic ?
-                (<p>
-                    {text.split(" ").map((word, index) => (
-                        <React.Fragment key={index}>
-                            {emphasizeHalf(word)}
-                            {" "}
-                        </React.Fragment>
-                    ))}
-                </p>) :
-                (
-                    <p>
-                        {children}
-                    </p>
-                )}
-        </Paragraph>
-    )
+  return (
+    <Paragraph isBionic={toggleBionic}>
+      {toggleBionic
+        ? (
+          <p>
+            {text.split(' ').map((word, index) => (
+              <React.Fragment key={index}>
+                {emphasizeHalf(word)}
+                {' '}
+              </React.Fragment>
+            ))}
+          </p>
+        )
+        : (
+          <p>
+            {children}
+          </p>
+        )}
+    </Paragraph>
+  );
 }
 
-export default Bionic
+export default Bionic;

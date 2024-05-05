@@ -37,6 +37,7 @@ export const DarkTheme: AppTheme = {
 // if the ESLint girlies could read they wouldn't be very happy.
 export const PrideTheme: AppTheme = {
   colours: {
+    // eslint-disable-next-line max-len
     background: 'linear-gradient(90deg, rgba(255,127,127,1) 0%, rgba(255,180,129,1) 25%, rgba(255,250,139,1) 50%, rgba(156,255,134,1) 76%, rgba(137,216,255,1) 100%);',
     text: '#000',
     section: '#F2B9B969',

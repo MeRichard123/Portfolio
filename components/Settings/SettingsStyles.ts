@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import styled from '@emotion/styled';
 
 export const StyledSettingsContainer = styled.div`

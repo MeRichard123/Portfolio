@@ -31,5 +31,6 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'linebreak-style': ['error', 'unix'],
     'react/require-default-props': 'off',
+    'max-len': ['error', { code: 140 }],
   },
 };
