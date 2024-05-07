@@ -26,6 +26,7 @@ function Skills() {
               <li>Rust</li>
               <li>Typescript</li>
               <li>C/ C++ </li>
+              <li>C#</li>
               <li>Python</li>
               <li>Haskell</li>
             </ul>
@@ -45,6 +46,7 @@ function Skills() {
             <ul>
               <li>Django</li>
               <li>Express</li>
+              <li>ASP.NET Core</li>
               <li>Git</li>
             </ul>
           </StyledSkillDivision>
